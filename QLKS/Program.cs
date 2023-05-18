@@ -18,7 +18,7 @@ namespace QLKS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormManageAccount());
+            Application.Run(new FormMainMenu());
         }
     }
 }

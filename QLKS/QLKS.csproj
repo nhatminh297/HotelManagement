@@ -229,6 +229,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\logo.png" />
     <None Include="Resources\icons8-user-folder-32.png" />
     <None Include="Resources\icons8-user-account-32.png" />
     <None Include="Resources\icons8-customers-32.png" />

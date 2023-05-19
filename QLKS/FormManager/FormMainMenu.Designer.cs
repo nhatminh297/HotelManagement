@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             FontAwesome.Sharp.IconPictureBox iconExit;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btReport = new FontAwesome.Sharp.IconButton();
             this.btAccounts = new FontAwesome.Sharp.IconButton();
-            this.btBill = new FontAwesome.Sharp.IconButton();
             this.btLogout = new FontAwesome.Sharp.IconButton();
             this.btServices = new FontAwesome.Sharp.IconButton();
             this.Room = new FontAwesome.Sharp.IconButton();
@@ -82,7 +82,6 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(68)))));
             this.panelMenu.Controls.Add(this.btReport);
             this.panelMenu.Controls.Add(this.btAccounts);
-            this.panelMenu.Controls.Add(this.btBill);
             this.panelMenu.Controls.Add(this.btLogout);
             this.panelMenu.Controls.Add(this.btServices);
             this.panelMenu.Controls.Add(this.Room);
@@ -107,7 +106,7 @@
             this.btReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btReport.IconSize = 32;
             this.btReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btReport.Location = new System.Drawing.Point(0, 415);
+            this.btReport.Location = new System.Drawing.Point(0, 365);
             this.btReport.Name = "btReport";
             this.btReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btReport.Size = new System.Drawing.Size(180, 50);
@@ -130,7 +129,7 @@
             this.btAccounts.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btAccounts.IconSize = 32;
             this.btAccounts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btAccounts.Location = new System.Drawing.Point(0, 365);
+            this.btAccounts.Location = new System.Drawing.Point(0, 315);
             this.btAccounts.Name = "btAccounts";
             this.btAccounts.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btAccounts.Size = new System.Drawing.Size(180, 50);
@@ -140,29 +139,6 @@
             this.btAccounts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btAccounts.UseVisualStyleBackColor = true;
             this.btAccounts.Click += new System.EventHandler(this.btAccounts_Click);
-            // 
-            // btBill
-            // 
-            this.btBill.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btBill.FlatAppearance.BorderSize = 0;
-            this.btBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBill.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btBill.IconChar = FontAwesome.Sharp.IconChar.MoneyBillWave;
-            this.btBill.IconColor = System.Drawing.Color.Gainsboro;
-            this.btBill.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btBill.IconSize = 32;
-            this.btBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBill.Location = new System.Drawing.Point(0, 315);
-            this.btBill.Name = "btBill";
-            this.btBill.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btBill.Size = new System.Drawing.Size(180, 50);
-            this.btBill.TabIndex = 6;
-            this.btBill.Text = "Bill";
-            this.btBill.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btBill.UseVisualStyleBackColor = true;
-            this.btBill.Click += new System.EventHandler(this.btBill_Click);
             // 
             // btLogout
             // 
@@ -291,7 +267,7 @@
             // btHome
             // 
             this.btHome.BackColor = System.Drawing.Color.Transparent;
-            this.btHome.Image = global::QLKS.Properties.Resources.logoo_removebg_preview;
+            this.btHome.Image = ((System.Drawing.Image)(resources.GetObject("btHome.Image")));
             this.btHome.Location = new System.Drawing.Point(12, 12);
             this.btHome.Name = "btHome";
             this.btHome.Size = new System.Drawing.Size(155, 88);
@@ -438,7 +414,6 @@
         private FontAwesome.Sharp.IconButton btCustomer;
         private FontAwesome.Sharp.IconButton btBooking;
         private System.Windows.Forms.Panel panelLogo;
-        private FontAwesome.Sharp.IconButton btBill;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbTitleChildForm;

@@ -24,3 +24,4 @@ C:\Users\DELL\Source\Repos\HotelManagement\QLKS\obj\Debug\QLKS.pdb
 C:\Users\DELL\source\repos\HotelManagement\QLKS\bin\Debug\QLKS.exe.config
 C:\Users\DELL\source\repos\HotelManagement\QLKS\bin\Debug\QLKS.exe
 C:\Users\DELL\source\repos\HotelManagement\QLKS\bin\Debug\QLKS.pdb
+C:\Users\DELL\source\repos\HotelManagement\QLKS\obj\Debug\QLKS.FormAddBooking.resources

@@ -82,6 +82,12 @@
     <Compile Include="FormAccount\FormEditAccount.Designer.cs">
       <DependentUpon>FormEditAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCustomer\FormAddBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomer\FormAddBooking.Designer.cs">
+      <DependentUpon>FormAddBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCustomer\FormBooking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     <EmbeddedResource Include="FormAccount\FormEditAccount.resx">
       <DependentUpon>FormEditAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomer\FormAddBooking.resx">
+      <DependentUpon>FormAddBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCustomer\FormBooking.resx">
       <DependentUpon>FormBooking.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,14 +208,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -223,7 +226,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />
-    <None Include="Resources\icons8-user-folder-32.png" />
     <None Include="Resources\icons8-user-account-32.png" />
     <None Include="Resources\icons8-customers-32.png" />
     <None Include="Resources\icons8-booking-32.png" />
@@ -256,6 +258,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoo-removebg-preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icons8-user-folder-32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

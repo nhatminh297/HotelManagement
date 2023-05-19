@@ -11,11 +11,23 @@ using System.Windows.Forms;
 
 namespace QLKS.FormAccount
 {
+    //chinh ma nv khong the thay doi, co the dung label
     public partial class FormEditAccount : Form
     {
+        string manv,username,password,role;
         public FormEditAccount()
         {
+            tbMaNhanVien.Enabled = false;
             InitializeComponent();
+        }
+        
+        public FormEditAccount(string Manv,string Username,string Password, string Role)
+        {
+            InitializeComponent();
+            manv = Manv;
+            username = Username;    
+            password = Password;
+            role = Role;
         }
 
         private void tbMaNhanVien_Enter(object sender, EventArgs e)
@@ -25,6 +37,7 @@ namespace QLKS.FormAccount
             {
                 tb.Text = "";
                 tb.ForeColor = Color.Black;
+                tbMaNhanVien.Enabled = false;
             }
         }
 
@@ -79,6 +92,19 @@ namespace QLKS.FormAccount
             }
         }
 
+        private void FormEditAccount_Load(object sender, EventArgs e)
+        {
+            tbMaNhanVien.Text = manv;
+            tbusername.Text = username;
+            tbpassword.Text = password;
+            tbPhanQuyen.Text = role;
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void tbPhanQuyen_Enter(object sender, EventArgs e)
         {
             Guna2TextBox tb = (Guna2TextBox)sender;
@@ -97,6 +123,16 @@ namespace QLKS.FormAccount
                 textBox.Text = "Phân quyền";
                 textBox.ForeColor = Color.Gray;
             }
+        }
+
+        Modify modify = new Modify();
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string query = "update accounts set username='" + tbusername.Text + "', password='" + tbpassword.Text + "', role='" + tbPhanQuyen.Text + "'";
+            MessageBox.Show("Cap nhat thanh cong");
+            this.Close();
+            modify.Command(query);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace QLKS
 {
     internal class Connection
     {
-        private static string _connectionString= @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\QLKS\QLKS\Database1.mdf;Integrated Security=True";
+        private static string _connectionString= @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\CNPM\QLKS\Database1.mdf;Integrated Security=True";
         public static SqlConnection GetSqlConnection()
         {
             return new SqlConnection(_connectionString);

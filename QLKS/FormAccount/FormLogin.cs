@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLKS.FormManager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,17 +39,17 @@ namespace QLKS
         {
             string username = guna2TextBox1.Text;
             string password = guna2TextBox2.Text;
-            string query ="select * from Account where UserName = '"+username+"' and Password = '"+password+"'";
-            string query2 = "select role from Account where UserName = '" + username + "' and Password = '" + password + "'";
-            if (modify.accounts(query).Count != 0 && modify.role(query2).Trim() == "Customer")
+            string query ="select * from Accounts where UserName = '"+username+"' and Password = '"+password+"'";
+            string query2 = "select role from Accounts where UserName = '" + username + "' and Password = '" + password + "'";
+            if (modify.accounts(query).Count != 0 && modify.role(query2).Trim() == "Admin")
             {
-                FormRoom room = new FormRoom();
+                FormManageAccount room = new FormManageAccount();
                 room.Show();
                 Hide();
             }
-            else if (modify.accounts(query).Count != 0 && modify.role(query2).Trim() == "Receiptionist")
+            else if (modify.accounts(query).Count != 0 && modify.role(query2).Trim() == "Nhân viên")
             {
-                FormManageFood food = new FormManageFood();
+                FormBooking food = new FormBooking();
                 food.Show();
                 Hide();
             }

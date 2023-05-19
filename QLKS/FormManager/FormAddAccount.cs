@@ -5,14 +5,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QLKS.FormManager
 {
     public partial class FormAddAccount : Form
     {
+        public delegate void truyendulieu();
+        public truyendulieu truyen;
         public FormAddAccount()
         {
             InitializeComponent();
@@ -130,6 +135,41 @@ namespace QLKS.FormManager
                 textBox.Text = "Password";
                 textBox.ForeColor = Color.Gray;
             }
+        }
+
+        private void btAddAccount_Click(object sender, EventArgs e)
+        {
+        }
+        
+        Modify modify=new Modify();
+        int i = 103;
+        private void btAddAccount_Click_1(object sender, EventArgs e)
+        {
+            string manv=i.ToString();
+            string hoten = guna2TextBox1.Text;
+            int sdt = int.Parse(guna2TextBox2.Text);
+            string ngaysinh = guna2DateTimePicker1.Text;
+            string diachi = guna2TextBox3.Text;
+            string role = guna2ComboBox1.Text;
+            string username = guna2TextBox5.Text;
+            string password = guna2TextBox6.Text;
+            try
+            { 
+                string query = "insert into Accounts values( '"+manv+"' ,'" + hoten + "', '" + ngaysinh + "','" + diachi + "','" + sdt + "','" + role + "','" + username + "','" + password + "')";
+                modify.Command(query);
+                MessageBox.Show("DK Thanh Cong");
+                i++;
+                FormAddAccount formAddAccount = new FormAddAccount();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

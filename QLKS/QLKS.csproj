@@ -91,6 +91,12 @@
     <Compile Include="FormAccount\FormEditAccount.Designer.cs">
       <DependentUpon>FormEditAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCustomer\FormAddBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomer\FormAddBooking.Designer.cs">
+      <DependentUpon>FormAddBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCustomer\FormBooking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     <Compile Include="Account.cs" />
     <EmbeddedResource Include="FormAccount\FormEditAccount.resx">
       <DependentUpon>FormEditAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomer\FormAddBooking.resx">
+      <DependentUpon>FormAddBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCustomer\FormBooking.resx">
       <DependentUpon>FormBooking.cs</DependentUpon>

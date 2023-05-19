@@ -42,8 +42,9 @@ namespace QLKS.FormManager
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(4, 186, 51);
-            public static Color color7 = Color.FromArgb(24, 161, 251);
-            
+            public static Color color7 = Color.FromArgb(239, 217, 33);
+            public static Color color8 = Color.FromArgb(24, 161, 251);
+
 
         }
         //methods
@@ -68,6 +69,8 @@ namespace QLKS.FormManager
                 //Icon current child form
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
                 iconCurrentChildForm.IconColor = color;
+                lbTitleChildForm.ForeColor = color;
+                lbTitleChildForm.Text = currentBtn.Text;
 
             }
         }
@@ -101,7 +104,6 @@ namespace QLKS.FormManager
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lbTitleChildForm.Text = childForm.Text;
         }
 
         private void btBooking_Click(object sender, EventArgs e)
@@ -113,7 +115,7 @@ namespace QLKS.FormManager
         private void btCustomer_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-
+            OpenChildForm(new FormEditAccount());
             
         }
 
@@ -141,9 +143,14 @@ namespace QLKS.FormManager
             
         }
 
-        private void btLogout_Click(object sender, EventArgs e)
+        private void btReport_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
+        }
+
+        private void btLogout_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color8);
             
         }
 
@@ -164,6 +171,7 @@ namespace QLKS.FormManager
             iconCurrentChildForm.IconChar = IconChar.HomeLg;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
             lbTitleChildForm.Text = "Home";
+            lbTitleChildForm.ForeColor = Color.MediumPurple;
         }
         //drag form
 
@@ -194,5 +202,7 @@ namespace QLKS.FormManager
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        
     }
 }

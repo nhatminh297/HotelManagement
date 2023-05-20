@@ -39,19 +39,6 @@ namespace QLKS
         }
 
 
-
-        private void cbxFindRoom_TextChanged(object sender, EventArgs e)
-        {
-            if (cbxFindRoom.SelectedIndex < 0)
-            {
-                cbxFindRoom.Text = "Room";
-            }
-            else
-            {
-                cbxFindRoom.Text = cbxFindRoom.SelectedText;
-            }
-        }
-
         private void btAddBooking_Click(object sender, EventArgs e)
         {
             FormAddBooking formAddBooking = new FormAddBooking();

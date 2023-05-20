@@ -38,7 +38,6 @@
             this.btMakeBill = new Guna.UI2.WinForms.Guna2Button();
             this.btAddBooking = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.cbxFindRoom = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbSearchName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +47,7 @@
             this.colCheckin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colcheckout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -55,12 +55,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            this.panel1.Controls.Add(this.guna2ComboBox1);
             this.panel1.Controls.Add(this.guna2ButtonDelete);
             this.panel1.Controls.Add(this.guna2ButtonEdit);
             this.panel1.Controls.Add(this.btMakeBill);
             this.panel1.Controls.Add(this.btAddBooking);
             this.panel1.Controls.Add(this.guna2DateTimePicker1);
-            this.panel1.Controls.Add(this.cbxFindRoom);
             this.panel1.Controls.Add(this.tbSearchName);
             this.panel1.Controls.Add(this.guna2DataGridView2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -155,43 +155,6 @@
             this.guna2DateTimePicker1.TabIndex = 5;
             this.guna2DateTimePicker1.Value = new System.DateTime(2023, 5, 19, 16, 2, 41, 434);
             // 
-            // cbxFindRoom
-            // 
-            this.cbxFindRoom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbxFindRoom.BackColor = System.Drawing.Color.Transparent;
-            this.cbxFindRoom.BorderRadius = 5;
-            this.cbxFindRoom.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxFindRoom.DropDownHeight = 100;
-            this.cbxFindRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxFindRoom.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxFindRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxFindRoom.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbxFindRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbxFindRoom.FormattingEnabled = true;
-            this.cbxFindRoom.IntegralHeight = false;
-            this.cbxFindRoom.ItemHeight = 30;
-            this.cbxFindRoom.Items.AddRange(new object[] {
-            "asdfadsfdas",
-            "asfdadsfas",
-            "asdf",
-            "asdf",
-            "fasdrt",
-            "fads",
-            "gsdf",
-            "gsfdg",
-            "ertgew",
-            "gwer",
-            "bxfb",
-            "stgrwe",
-            "gsdfg",
-            "wger",
-            "gsd"});
-            this.cbxFindRoom.Location = new System.Drawing.Point(259, 38);
-            this.cbxFindRoom.Name = "cbxFindRoom";
-            this.cbxFindRoom.Size = new System.Drawing.Size(95, 36);
-            this.cbxFindRoom.TabIndex = 4;
-            this.cbxFindRoom.TextChanged += new System.EventHandler(this.cbxFindRoom_TextChanged);
-            // 
             // tbSearchName
             // 
             this.tbSearchName.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -206,12 +169,12 @@
             this.tbSearchName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbSearchName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSearchName.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbSearchName.IconLeft")));
-            this.tbSearchName.Location = new System.Drawing.Point(77, 36);
+            this.tbSearchName.Location = new System.Drawing.Point(77, 38);
             this.tbSearchName.Name = "tbSearchName";
             this.tbSearchName.PasswordChar = '\0';
             this.tbSearchName.PlaceholderText = "";
             this.tbSearchName.SelectedText = "";
-            this.tbSearchName.Size = new System.Drawing.Size(176, 38);
+            this.tbSearchName.Size = new System.Drawing.Size(176, 36);
             this.tbSearchName.TabIndex = 3;
             // 
             // guna2DataGridView2
@@ -332,6 +295,25 @@
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.BorderRadius = 5;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "Room"});
+            this.guna2ComboBox1.Location = new System.Drawing.Point(259, 38);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(95, 36);
+            this.guna2ComboBox1.StartIndex = 0;
+            this.guna2ComboBox1.TabIndex = 4;
+            // 
             // FormBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,7 +340,6 @@
         private Guna.UI2.WinForms.Guna2Button btMakeBill;
         private Guna.UI2.WinForms.Guna2Button btAddBooking;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2ComboBox cbxFindRoom;
         private Guna.UI2.WinForms.Guna2TextBox tbSearchName;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
@@ -368,5 +349,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckin;
         private System.Windows.Forms.DataGridViewTextBoxColumn colcheckout;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }

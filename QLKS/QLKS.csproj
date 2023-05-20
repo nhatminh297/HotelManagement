@@ -87,134 +87,179 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FormAccount\FormEditAccount.cs">
+    <Compile Include="Accounts\FormEditAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAccount\FormEditAccount.Designer.cs">
+    <Compile Include="Accounts\FormEditAccount.Designer.cs">
       <DependentUpon>FormEditAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCustomer\FormAddBooking.cs">
+    <Compile Include="Rooms\FormAddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCustomer\FormAddBooking.Designer.cs">
+    <Compile Include="Rooms\FormAddRoom.Designer.cs">
+      <DependentUpon>FormAddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\FormAddServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\FormAddServices.Designer.cs">
+      <DependentUpon>FormAddServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\FormBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\FormBill.Designer.cs">
+      <DependentUpon>FormBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\FormEditBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\FormEditBooking.Designer.cs">
+      <DependentUpon>FormEditBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rooms\FormEditRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rooms\FormEditRoom.Designer.cs">
+      <DependentUpon>FormEditRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\FormEditServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\FormEditServices.Designer.cs">
+      <DependentUpon>FormEditServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportVSMainMenu\FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportVSMainMenu\FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\FormServices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\FormServices.Designer.cs">
+      <DependentUpon>FormServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\FormCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\FormCustomers.Designer.cs">
+      <DependentUpon>FormCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\FormAddBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Booking\FormAddBooking.Designer.cs">
       <DependentUpon>FormAddBooking.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCustomer\FormBooking.cs">
+    <Compile Include="Booking\FormBooking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCustomer\FormBooking.Designer.cs">
+    <Compile Include="Booking\FormBooking.Designer.cs">
       <DependentUpon>FormBooking.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAccount\FormForgetPassword.cs">
+    <Compile Include="Accounts\FormForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAccount\FormForgetPassword.Designer.cs">
+    <Compile Include="Accounts\FormForgetPassword.Designer.cs">
       <DependentUpon>FormForgetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAccount\FormSignUp.cs">
+    <Compile Include="Accounts\FormSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAccount\FormSignUp.Designer.cs">
+    <Compile Include="Accounts\FormSignUp.Designer.cs">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAccount\FormLogin.cs">
+    <Compile Include="Accounts\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAccount\FormLogin.Designer.cs">
+    <Compile Include="Accounts\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCustomer\FormOrderFood.cs">
+    <Compile Include="Rooms\FormRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCustomer\FormOrderFood.Designer.cs">
-      <DependentUpon>FormOrderFood.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormCustomer\FormRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCustomer\FormRoom.Designer.cs">
+    <Compile Include="Rooms\FormRoom.Designer.cs">
       <DependentUpon>FormRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManager\FormAddAccount.cs">
+    <Compile Include="Accounts\FormAddAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManager\FormAddAccount.Designer.cs">
+    <Compile Include="Accounts\FormAddAccount.Designer.cs">
       <DependentUpon>FormAddAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManager\FormMainMenu.cs">
+    <Compile Include="ReportVSMainMenu\FormMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManager\FormMainMenu.Designer.cs">
+    <Compile Include="ReportVSMainMenu\FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManager\FormManageServices.cs">
+    <Compile Include="Accounts\FormManageAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManager\FormManageServices.Designer.cs">
-      <DependentUpon>FormManageServices.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormManager\FormManageRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormManager\FormManageRoom.Designer.cs">
-      <DependentUpon>FormManageRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormManager\FormUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormManager\FormUser.Designer.cs">
-      <DependentUpon>FormUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormManager\FormManageAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormManager\FormManageAccount.Designer.cs">
+    <Compile Include="Accounts\FormManageAccount.Designer.cs">
       <DependentUpon>FormManageAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Modify.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Account.cs" />
-    <EmbeddedResource Include="FormAccount\FormEditAccount.resx">
+    <EmbeddedResource Include="Accounts\FormEditAccount.resx">
       <DependentUpon>FormEditAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCustomer\FormAddBooking.resx">
+    <EmbeddedResource Include="Rooms\FormAddRoom.resx">
+      <DependentUpon>FormAddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\FormAddServices.resx">
+      <DependentUpon>FormAddServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\FormBill.resx">
+      <DependentUpon>FormBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\FormEditBooking.resx">
+      <DependentUpon>FormEditBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rooms\FormEditRoom.resx">
+      <DependentUpon>FormEditRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\FormEditServices.resx">
+      <DependentUpon>FormEditServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportVSMainMenu\FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\FormServices.resx">
+      <DependentUpon>FormServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\FormCustomers.resx">
+      <DependentUpon>FormCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\FormAddBooking.resx">
       <DependentUpon>FormAddBooking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCustomer\FormBooking.resx">
+    <EmbeddedResource Include="Booking\FormBooking.resx">
       <DependentUpon>FormBooking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAccount\FormForgetPassword.resx">
+    <EmbeddedResource Include="Accounts\FormForgetPassword.resx">
       <DependentUpon>FormForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAccount\FormLogin.resx">
+    <EmbeddedResource Include="Accounts\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAccount\FormSignUp.resx">
+    <EmbeddedResource Include="Accounts\FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCustomer\FormOrderFood.resx">
-      <DependentUpon>FormOrderFood.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormCustomer\FormRoom.resx">
+    <EmbeddedResource Include="Rooms\FormRoom.resx">
       <DependentUpon>FormRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManager\FormAddAccount.resx">
+    <EmbeddedResource Include="Accounts\FormAddAccount.resx">
       <DependentUpon>FormAddAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManager\FormMainMenu.resx">
+    <EmbeddedResource Include="ReportVSMainMenu\FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManager\FormManageServices.resx">
-      <DependentUpon>FormManageServices.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormManager\FormManageRoom.resx">
-      <DependentUpon>FormManageRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormManager\FormUser.resx">
-      <DependentUpon>FormUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormManager\FormManageAccount.resx">
+    <EmbeddedResource Include="Accounts\FormManageAccount.resx">
       <DependentUpon>FormManageAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -286,6 +331,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\logoo-removebg-preview %281%29.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

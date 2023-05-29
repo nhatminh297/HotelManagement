@@ -1,4 +1,5 @@
-﻿using QLKS.FormManager;
+﻿using QLKS.DAO;
+using QLKS.FormManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +8,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QLKS
 {
@@ -39,24 +42,16 @@ namespace QLKS
         {
             string username = guna2TextBox1.Text;
             string password = guna2TextBox2.Text;
-            string query ="select * from Accounts where UserName = '"+username+"' and Password = '"+password+"'";
-            string query2 = "select role from Accounts where UserName = '" + username + "' and Password = '" + password + "'";
-            if (modify.accounts(query).Count != 0 && modify.role(query2).Trim() == "Admin")
+            string role = AccountsDAO.Instance.Login(username, password);
+            if (role != null)
             {
-                FormManageAccount room = new FormManageAccount();
-                room.Show();
-                Hide();
-            }
-            else if (modify.accounts(query).Count != 0 && modify.role(query2).Trim() == "Nhân viên")
-            {
-                FormBooking food = new FormBooking();
-                food.Show();
-                Hide();
+                FormMainMenu mainMenu = new FormMainMenu(role);
+                mainMenu.Show();
+                this.Hide();
             }
             else
             {
-                label3.Visible = true;
-                label2.Visible = true;
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
             }
         }
 

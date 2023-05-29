@@ -79,7 +79,7 @@ namespace QLKS.FormManager
         }
         private void FormManageAccount_Load(object sender, EventArgs e)
         {
-            guna2DataGridView1.DataSource = GetAccounts().Tables[0];
+            //guna2DataGridView1.DataSource = GetAccounts().Tables[0];
             //guna2DataGridView1.DataMember = "Accounts";
         }
 

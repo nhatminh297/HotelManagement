@@ -98,6 +98,8 @@ namespace QLKS
             formAddBooking.ShowDialog();
         }
 
+
+
         private void guna2ButtonDelete_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem đã chọn dòng dữ liệu hay chưa
@@ -122,6 +124,21 @@ namespace QLKS
             }
 
             
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (selectedRow != null)
+            {
+
+                //
+
+            }
+            else
+            {
+                // Hiển thị thông báo cho người dùng rằng phải chọn dòng dữ liệu trước khi bấm nút
+                MessageBox.Show("Please choose data!");
+            }
         }
     }
 }

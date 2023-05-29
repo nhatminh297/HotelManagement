@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using QLKS.FormAccount;
@@ -19,14 +20,16 @@ namespace QLKS.FormManager
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        private string Role;
 
-        public FormMainMenu()
+        public FormMainMenu(string role)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
 
+            this.Role = role;
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -140,11 +143,11 @@ namespace QLKS.FormManager
             
         }
 
-        private void btBill_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color6);
+        //private void btBill_Click(object sender, EventArgs e)
+        //{
+        //    ActivateButton(sender, RGBColors.color6);
             
-        }
+        //}
 
         private void btReport_Click(object sender, EventArgs e)
         {
@@ -159,6 +162,9 @@ namespace QLKS.FormManager
             if (result == DialogResult.OK)
             {
                 // Thực hiện 
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+                this.Close();
 
             }
             else if (result == DialogResult.Cancel)
@@ -220,6 +226,11 @@ namespace QLKS.FormManager
 
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
+            if (Role == "Receptionist")
+            {
+                btAccounts.Visible = false;
+                btReport.Visible = false;
+            }
             OpenChildForm(new FormHome());
         }
     }

@@ -83,7 +83,12 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="DAO\AccountsDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\DVDAO.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\PhongDAO.cs" />
+    <Compile Include="DAO\SvBillDAO.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +100,12 @@
     <Compile Include="Accounts\FormEditAccount.Designer.cs">
       <DependentUpon>FormEditAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\Accounts.cs" />
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\DV.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\Phong.cs" />
+    <Compile Include="DTO\SvBill.cs" />
     <Compile Include="Rooms\FormAddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,8 +346,6 @@
     </Content>
     <None Include="Resources\logoo-removebg-preview %281%29.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

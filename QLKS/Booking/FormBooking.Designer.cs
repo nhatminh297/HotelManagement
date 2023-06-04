@@ -38,14 +38,20 @@
             this.guna2ButtonDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btMakeBill = new Guna.UI2.WinForms.Guna2Button();
             this.btAddBooking = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.tbSearchName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.colMaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCheckin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colcheckout = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenkh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sophong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Checkin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkout = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prices = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.makh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maphong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenloaiphong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giamoigio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
@@ -59,14 +65,13 @@
             this.panel1.Controls.Add(this.guna2ButtonDelete);
             this.panel1.Controls.Add(this.btMakeBill);
             this.panel1.Controls.Add(this.btAddBooking);
-            this.panel1.Controls.Add(this.guna2DateTimePicker1);
             this.panel1.Controls.Add(this.tbSearchName);
             this.panel1.Controls.Add(this.guna2DataGridView2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(904, 489);
+            this.panel1.Size = new System.Drawing.Size(954, 539);
             this.panel1.TabIndex = 2;
             // 
             // guna2Button1
@@ -80,7 +85,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.DarkGoldenrod;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(639, 411);
+            this.guna2Button1.Location = new System.Drawing.Point(664, 471);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(87, 38);
             this.guna2Button1.TabIndex = 10;
@@ -102,7 +107,7 @@
             this.cbFindRoom.ItemHeight = 30;
             this.cbFindRoom.Items.AddRange(new object[] {
             "Room"});
-            this.cbFindRoom.Location = new System.Drawing.Point(254, 52);
+            this.cbFindRoom.Location = new System.Drawing.Point(326, 58);
             this.cbFindRoom.Name = "cbFindRoom";
             this.cbFindRoom.Size = new System.Drawing.Size(95, 36);
             this.cbFindRoom.StartIndex = 0;
@@ -119,7 +124,7 @@
             this.guna2ButtonDelete.FillColor = System.Drawing.Color.Firebrick;
             this.guna2ButtonDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ButtonDelete.ForeColor = System.Drawing.Color.White;
-            this.guna2ButtonDelete.Location = new System.Drawing.Point(750, 411);
+            this.guna2ButtonDelete.Location = new System.Drawing.Point(775, 471);
             this.guna2ButtonDelete.Name = "guna2ButtonDelete";
             this.guna2ButtonDelete.Size = new System.Drawing.Size(87, 38);
             this.guna2ButtonDelete.TabIndex = 9;
@@ -137,7 +142,7 @@
             this.btMakeBill.FillColor = System.Drawing.Color.ForestGreen;
             this.btMakeBill.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btMakeBill.ForeColor = System.Drawing.Color.White;
-            this.btMakeBill.Location = new System.Drawing.Point(527, 411);
+            this.btMakeBill.Location = new System.Drawing.Point(552, 471);
             this.btMakeBill.Name = "btMakeBill";
             this.btMakeBill.Size = new System.Drawing.Size(87, 38);
             this.btMakeBill.TabIndex = 7;
@@ -155,31 +160,12 @@
             this.btAddBooking.FillColor = System.Drawing.Color.ForestGreen;
             this.btAddBooking.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAddBooking.ForeColor = System.Drawing.Color.White;
-            this.btAddBooking.Location = new System.Drawing.Point(705, 52);
+            this.btAddBooking.Location = new System.Drawing.Point(743, 58);
             this.btAddBooking.Name = "btAddBooking";
             this.btAddBooking.Size = new System.Drawing.Size(132, 38);
             this.btAddBooking.TabIndex = 6;
             this.btAddBooking.Text = "MAKE BOOKING";
             this.btAddBooking.Click += new System.EventHandler(this.btAddBooking_Click);
-            // 
-            // guna2DateTimePicker1
-            // 
-            this.guna2DateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2DateTimePicker1.BorderRadius = 5;
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm";
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(355, 52);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.ShowCheckBox = true;
-            this.guna2DateTimePicker1.ShowUpDown = true;
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(187, 36);
-            this.guna2DateTimePicker1.TabIndex = 5;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2023, 5, 19, 16, 2, 41, 434);
             // 
             // tbSearchName
             // 
@@ -192,21 +178,23 @@
             this.tbSearchName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbSearchName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbSearchName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSearchName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbSearchName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearchName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSearchName.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbSearchName.IconLeft")));
-            this.tbSearchName.Location = new System.Drawing.Point(72, 52);
+            this.tbSearchName.Location = new System.Drawing.Point(69, 58);
             this.tbSearchName.Name = "tbSearchName";
             this.tbSearchName.PasswordChar = '\0';
             this.tbSearchName.PlaceholderText = "";
             this.tbSearchName.SelectedText = "";
-            this.tbSearchName.Size = new System.Drawing.Size(176, 36);
+            this.tbSearchName.Size = new System.Drawing.Size(251, 36);
             this.tbSearchName.TabIndex = 3;
             this.tbSearchName.Enter += new System.EventHandler(this.tbSearchName_Enter);
             this.tbSearchName.Leave += new System.EventHandler(this.tbSearchName_Leave);
             // 
             // guna2DataGridView2
             // 
+            this.guna2DataGridView2.AllowUserToAddRows = false;
+            this.guna2DataGridView2.AllowUserToDeleteRows = false;
             this.guna2DataGridView2.AllowUserToOrderColumns = true;
             this.guna2DataGridView2.AllowUserToResizeColumns = false;
             this.guna2DataGridView2.AllowUserToResizeRows = false;
@@ -226,11 +214,18 @@
             this.guna2DataGridView2.ColumnHeadersHeight = 17;
             this.guna2DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaHD,
-            this.colname,
-            this.colRoom,
-            this.colCheckin,
-            this.colcheckout});
+            this.id,
+            this.tenkh,
+            this.sophong,
+            this.Checkin,
+            this.checkout,
+            this.prices,
+            this.makh,
+            this.manv,
+            this.maphong,
+            this.tenloaiphong,
+            this.giamoigio,
+            this.trangthai});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,12 +235,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView2.Location = new System.Drawing.Point(72, 120);
+            this.guna2DataGridView2.Location = new System.Drawing.Point(70, 120);
             this.guna2DataGridView2.MultiSelect = false;
             this.guna2DataGridView2.Name = "guna2DataGridView2";
             this.guna2DataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.guna2DataGridView2.RowHeadersVisible = false;
-            this.guna2DataGridView2.Size = new System.Drawing.Size(765, 263);
+            this.guna2DataGridView2.Size = new System.Drawing.Size(822, 330);
             this.guna2DataGridView2.TabIndex = 1;
             this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -271,40 +266,82 @@
             this.guna2DataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView2_CellClick);
             this.guna2DataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView2_CellDoubleClick);
             // 
-            // colMaHD
+            // id
             // 
-            this.colMaHD.FillWeight = 40F;
-            this.colMaHD.HeaderText = "ID";
-            this.colMaHD.Name = "colMaHD";
-            this.colMaHD.ReadOnly = true;
+            this.id.FillWeight = 40F;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
-            // colname
+            // tenkh
             // 
-            this.colname.FillWeight = 107.8173F;
-            this.colname.HeaderText = "Name";
-            this.colname.Name = "colname";
-            this.colname.ReadOnly = true;
+            this.tenkh.FillWeight = 107.8173F;
+            this.tenkh.HeaderText = "Name";
+            this.tenkh.Name = "tenkh";
+            this.tenkh.ReadOnly = true;
             // 
-            // colRoom
+            // sophong
             // 
-            this.colRoom.FillWeight = 107.8173F;
-            this.colRoom.HeaderText = "Room";
-            this.colRoom.Name = "colRoom";
-            this.colRoom.ReadOnly = true;
+            this.sophong.FillWeight = 107.8173F;
+            this.sophong.HeaderText = "Room";
+            this.sophong.Name = "sophong";
+            this.sophong.ReadOnly = true;
             // 
-            // colCheckin
+            // Checkin
             // 
-            this.colCheckin.FillWeight = 107.8173F;
-            this.colCheckin.HeaderText = "Check In";
-            this.colCheckin.Name = "colCheckin";
-            this.colCheckin.ReadOnly = true;
+            this.Checkin.FillWeight = 107.8173F;
+            this.Checkin.HeaderText = "Check In";
+            this.Checkin.Name = "Checkin";
+            this.Checkin.ReadOnly = true;
             // 
-            // colcheckout
+            // checkout
             // 
-            this.colcheckout.FillWeight = 107.8173F;
-            this.colcheckout.HeaderText = "Check Out";
-            this.colcheckout.Name = "colcheckout";
-            this.colcheckout.ReadOnly = true;
+            this.checkout.FillWeight = 107.8173F;
+            this.checkout.HeaderText = "Check Out";
+            this.checkout.Name = "checkout";
+            this.checkout.ReadOnly = true;
+            // 
+            // prices
+            // 
+            this.prices.HeaderText = "Prices";
+            this.prices.Name = "prices";
+            this.prices.ReadOnly = true;
+            // 
+            // makh
+            // 
+            this.makh.HeaderText = "makh";
+            this.makh.Name = "makh";
+            this.makh.Visible = false;
+            // 
+            // manv
+            // 
+            this.manv.HeaderText = "manv";
+            this.manv.Name = "manv";
+            this.manv.Visible = false;
+            // 
+            // maphong
+            // 
+            this.maphong.HeaderText = "maphong";
+            this.maphong.Name = "maphong";
+            this.maphong.Visible = false;
+            // 
+            // tenloaiphong
+            // 
+            this.tenloaiphong.HeaderText = "tenloaiphong";
+            this.tenloaiphong.Name = "tenloaiphong";
+            this.tenloaiphong.Visible = false;
+            // 
+            // giamoigio
+            // 
+            this.giamoigio.HeaderText = "giamoigio";
+            this.giamoigio.Name = "giamoigio";
+            this.giamoigio.Visible = false;
+            // 
+            // trangthai
+            // 
+            this.trangthai.HeaderText = "trangthai";
+            this.trangthai.Name = "trangthai";
+            this.trangthai.Visible = false;
             // 
             // guna2ContextMenuStrip1
             // 
@@ -325,7 +362,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 489);
+            this.ClientSize = new System.Drawing.Size(954, 539);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
@@ -345,16 +382,22 @@
         private Guna.UI2.WinForms.Guna2Button guna2ButtonDelete;
         private Guna.UI2.WinForms.Guna2Button btMakeBill;
         private Guna.UI2.WinForms.Guna2Button btAddBooking;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2TextBox tbSearchName;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView2;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
         private Guna.UI2.WinForms.Guna2ComboBox cbFindRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colcheckout;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenkh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sophong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Checkin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn checkout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prices;
+        private System.Windows.Forms.DataGridViewTextBoxColumn makh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn manv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maphong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenloaiphong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giamoigio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn trangthai;
     }
 }

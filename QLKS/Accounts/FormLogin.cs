@@ -42,10 +42,11 @@ namespace QLKS
         {
             string username = guna2TextBox1.Text;
             string password = guna2TextBox2.Text;
-            string role = AccountsDAO.Instance.Login(username, password);
+            string role = AccountsDAO.Instance.GetRole(username, password);
+            int id = AccountsDAO.Instance.GetID(username, password);
             if (role != null)
             {
-                FormMainMenu mainMenu = new FormMainMenu(role);
+                FormMainMenu mainMenu = new FormMainMenu(id, role);
                 mainMenu.Show();
                 this.Hide();
             }
@@ -72,6 +73,11 @@ namespace QLKS
             FormForgetPassword formForgetPassword = new FormForgetPassword();
             formForgetPassword.Show();
             this.Hide();
+        }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

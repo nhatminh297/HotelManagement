@@ -39,11 +39,12 @@
             this.btAdd = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrices = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btSearch = new Guna.UI2.WinForms.Guna2Button();
             this.tbSearchRoom = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
@@ -133,7 +134,11 @@
             // 
             // guna2DataGridView1
             // 
+            this.guna2DataGridView1.AllowUserToAddRows = false;
+            this.guna2DataGridView1.AllowUserToDeleteRows = false;
             this.guna2DataGridView1.AllowUserToOrderColumns = true;
+            this.guna2DataGridView1.AllowUserToResizeColumns = false;
+            this.guna2DataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.guna2DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -147,15 +152,16 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeight = 17;
+            this.guna2DataGridView1.ColumnHeadersHeight = 20;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
-            this.colNumber,
+            this.colRoom_number,
             this.colType,
             this.colCapacity,
             this.colPrices,
-            this.colStatus});
+            this.colStatus,
+            this.colMota});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -167,6 +173,7 @@
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(80, 109);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
+            this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.Size = new System.Drawing.Size(747, 263);
             this.guna2DataGridView1.TabIndex = 8;
@@ -182,8 +189,8 @@
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 17;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 20;
+            this.guna2DataGridView1.ThemeStyle.ReadOnly = true;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -201,12 +208,12 @@
             this.colID.Name = "colID";
             this.colID.ReadOnly = true;
             // 
-            // colNumber
+            // colRoom_number
             // 
-            this.colNumber.FillWeight = 80F;
-            this.colNumber.HeaderText = "Room number";
-            this.colNumber.Name = "colNumber";
-            this.colNumber.ReadOnly = true;
+            this.colRoom_number.FillWeight = 80F;
+            this.colRoom_number.HeaderText = "Room number";
+            this.colRoom_number.Name = "colRoom_number";
+            this.colRoom_number.ReadOnly = true;
             // 
             // colType
             // 
@@ -226,11 +233,20 @@
             // 
             this.colPrices.HeaderText = "Prices/hour";
             this.colPrices.Name = "colPrices";
+            this.colPrices.ReadOnly = true;
             // 
             // colStatus
             // 
             this.colStatus.HeaderText = "Status";
             this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colMota
+            // 
+            this.colMota.HeaderText = "Describe";
+            this.colMota.Name = "colMota";
+            this.colMota.ReadOnly = true;
+            this.colMota.Visible = false;
             // 
             // btSearch
             // 
@@ -299,12 +315,13 @@
         private Guna.UI2.WinForms.Guna2Button guna2ButtonDelete;
         private Guna.UI2.WinForms.Guna2Button guna2ButtonEdit;
         private Guna.UI2.WinForms.Guna2Button btAdd;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn colType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCapacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrices;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMota;
     }
 }

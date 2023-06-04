@@ -29,13 +29,13 @@ namespace QLKS.DTO
 
         public Phong(int iD, int soPhong, string tenLoaiPhong, decimal giaMoiGio, int sucChua, string moTa, string trangThai)
         {
-            ID = iD;
-            SoPhong = soPhong;
-            TenLoaiPhong = tenLoaiPhong;
-            GiaMoiGio = giaMoiGio;
-            SucChua = sucChua;
-            MoTa = moTa;
-            TrangThai = trangThai;
+            this.ID = iD;
+            this.SoPhong = soPhong;
+            this.TenLoaiPhong = tenLoaiPhong;
+            this.GiaMoiGio = giaMoiGio;
+            this.SucChua = sucChua;
+            this.MoTa = moTa;
+            this.TrangThai = trangThai;
         }
 
         public Phong(DataRow row)

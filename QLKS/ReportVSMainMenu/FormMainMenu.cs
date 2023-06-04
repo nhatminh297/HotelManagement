@@ -11,6 +11,7 @@ using System.Web.Security;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using QLKS.FormAccount;
+using QLKS.ReportVSMainMenu;
 
 namespace QLKS.FormManager
 {
@@ -21,8 +22,11 @@ namespace QLKS.FormManager
         private Panel leftBorderBtn;
         private Form currentChildForm;
         private string Role;
+        private int Id;
 
-        public FormMainMenu(string role)
+        public int Id1 { get => Id; set => Id = value; }
+
+        public FormMainMenu(int id, string role)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -30,6 +34,7 @@ namespace QLKS.FormManager
             panelMenu.Controls.Add(leftBorderBtn);
 
             this.Role = role;
+            this.Id1 = id;
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
@@ -91,7 +96,7 @@ namespace QLKS.FormManager
             }
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             //open only form
             if (currentChildForm != null)
@@ -112,7 +117,7 @@ namespace QLKS.FormManager
         private void btBooking_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new FormBooking());
+            OpenChildForm(new FormBooking(this.Id1));
         }
 
         private void btCustomer_Click(object sender, EventArgs e)
@@ -139,7 +144,7 @@ namespace QLKS.FormManager
         private void btAccounts_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
-            OpenChildForm(new FormManageAccount());
+            OpenChildForm(new FormManageAccount(Id1));
             
         }
 
@@ -152,6 +157,8 @@ namespace QLKS.FormManager
         private void btReport_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
+            OpenChildForm(new FormDashboard());
+
         }
 
         private void btLogout_Click(object sender, EventArgs e)

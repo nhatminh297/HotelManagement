@@ -26,9 +26,7 @@ namespace QLKS.DAO
                 DataProvider.instance = value;
             } 
         }
-        private DataProvider()
-        {
-        }
+        private DataProvider(){ }
 
         private static string _connectionString = @"Data Source=DESKTOP-NHATMIN\SQLEXPRESS02;AttachDbFilename=C:\Workspaces\Projects\HotelManagement\QLKS\Database1.mdf;Integrated Security=True";
 

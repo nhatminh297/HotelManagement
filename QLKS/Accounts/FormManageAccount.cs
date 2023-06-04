@@ -1,4 +1,6 @@
 ﻿using Guna.UI2.WinForms;
+using QLKS.DAO;
+using QLKS.DTO;
 using QLKS.FormAccount;
 using System;
 using System.Collections.Generic;
@@ -15,105 +17,101 @@ namespace QLKS.FormManager
 {
     public partial class FormManageAccount : Form
     {
-        string manv;
-        string username;
-        string password;
-        string role;
-        public FormManageAccount()
+        private int IDThis;
+        public FormManageAccount(int iDThis)
         {
             InitializeComponent();
+            IDThis = iDThis;
+            LoadAccount();
         }
 
-        private void tbsearchacc_Enter(object sender, EventArgs e)
+
+        
+        
+        public DataGridViewRow AccountToRow(Accounts acc)
         {
-            Guna2TextBox tb = (Guna2TextBox)sender;   
-            if (tb.Text == "Tìm kiếm tài khoản")
+            DataGridViewRow row = new DataGridViewRow();
+            row.CreateCells(guna2DataGridView1, acc.ID, acc.HoTen, acc.DienThoai, acc.Username, acc.Password ,acc.DiaChi, acc.Role);
+            return row;
+        }
+
+        public void LoadAccount()
+        {
+            guna2DataGridView1.Rows.Clear();
+            List<Accounts> listAcc = AccountsDAO.Instance.GetAllAccount();
+            foreach(Accounts acc in listAcc)
             {
-                tb.Text = "";
-                tb.ForeColor = Color.Black;
+                guna2DataGridView1.Rows.Add(AccountToRow(acc));
             }
-        }
-
-        private void tbsearchacc_Leave(object sender, EventArgs e)
-        {
-            Guna2TextBox textBox = (Guna2TextBox)sender;
-
-            if (string.IsNullOrWhiteSpace(textBox.Text))
-            {
-                textBox.Text = "Tìm kiếm tài khoản";
-                textBox.ForeColor = Color.Gray;
-            }
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            FormEditAccount frm = new FormEditAccount(manv,username,password,role);
-            frm.ShowDialog();
-
         }
         
-        private void Update()
-        {
-            guna2DataGridView1.DataSource = GetAccounts().Tables[0];
-        }
 
         private void btnAddAccount_Click(object sender, EventArgs e)
-        {
+        { new FormAddAccount();
+           
             FormAddAccount frm = new FormAddAccount();
-            frm.truyen = new FormAddAccount.truyendulieu(Update);
             frm.ShowDialog();
         }
-
-        DataSet GetAccounts()
+        public Accounts RowToAccounts(DataGridViewRow row)
         {
-            DataSet data= new DataSet();
-            string query = "select MaNV,UserName,Password,Role from Accounts";
-            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+            Accounts accounts = new Accounts();
+            accounts.ID = (int)row.Cells["colID"].Value;
+            accounts.HoTen = row.Cells["colHoten"].Value.ToString();
+            accounts.DienThoai = row.Cells["colDienthoai"].Value.ToString();
+            accounts.Username = row.Cells["colUsername"].Value.ToString();
+            accounts.Password = row.Cells["colPassword"].Value.ToString();
+            accounts.DiaChi = row.Cells["colDiachi"].Value.ToString();
+            accounts.Role = row.Cells["colRole"].Value.ToString();
+
+            return accounts;
+        }
+
+        public DataGridViewRow AccountsToRow(Accounts acc)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row.CreateCells(guna2DataGridView1, acc.ID, acc.HoTen, acc.DienThoai, acc.Username,
+                acc.Password, acc.DiaChi, acc.Role);
+            return row;
+        }
+
+        private void btEdit_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count > 0)
             {
-                sqlConnection.Open();
-                SqlDataAdapter adapter=new SqlDataAdapter(query, sqlConnection);
-                adapter.Fill(data);
-                sqlConnection.Close();
-            }
-            return data;
-        }
-        private void FormManageAccount_Load(object sender, EventArgs e)
-        {
-            //guna2DataGridView1.DataSource = GetAccounts().Tables[0];
-            //guna2DataGridView1.DataMember = "Accounts";
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-           
-        }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-            guna2DataGridView1.DataSource = GetAccounts().Tables[0];
-        }
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i = guna2DataGridView1.CurrentRow.Index;
-            if(i!=0 )
-            {
-                manv = guna2DataGridView1.Rows[i].Cells[0].Value.ToString();
-                username = guna2DataGridView1.Rows[i].Cells[1].Value.ToString();
-                password = guna2DataGridView1.Rows[i].Cells[2].Value.ToString();
-                role = guna2DataGridView1.Rows[i].Cells[3].Value.ToString();
+                DataGridViewRow row = guna2DataGridView1.CurrentRow;
+                Accounts acc = RowToAccounts(row);
+                FormEditAccount frm = new FormEditAccount(IDThis, acc.ID, acc.Role);
+                frm.ShowDialog();
             }
         }
 
-        Modify modify = new Modify();
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void btDelete_Click(object sender, EventArgs e)
         {
-            int i = guna2DataGridView1.CurrentRow.Index;
-            string manv= guna2DataGridView1.Rows[i].Cells[0].Value.ToString();
-            if (manv.Trim()!="1")
+            DataGridViewRow row = guna2DataGridView1.CurrentRow;
+            if (row != null)
             {
-                string query = "delete from Accounts where manv='" + manv + "'";
-                modify.Command(query);
+                Accounts acc = RowToAccounts(row);
+                if(IDThis != acc.ID)
+                {
+                    DialogResult res = MessageBox.Show("Bạn có chắc muốn xóa tài khoản này?", "Confirm dialog", MessageBoxButtons.OKCancel);
+                    if(res == DialogResult.OK)
+                    {
+                        if (AccountsDAO.Instance.DeleteAccounts(acc.ID) != 0)
+                        {
+                            MessageBox.Show("Đã xóa tài khoản " + acc.Username);
+                        }
+                        guna2DataGridView1.Rows.Remove(row);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else if(IDThis == acc.ID)
+                {
+                    MessageBox.Show("Không thể xóa tài khoản đang sử dụng.", "Ignore", MessageBoxButtons.OK);
+                    return;
+                }
             }
         }
     }

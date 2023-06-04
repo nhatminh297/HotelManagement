@@ -39,10 +39,6 @@
             this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Services = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colprices = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.tbTime = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,6 +58,14 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btPrint = new FontAwesome.Sharp.IconButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.tendv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbCheckin = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbcheckout = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -202,10 +206,10 @@
             this.guna2DataGridView1.ColumnHeadersHeight = 17;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Services,
-            this.colprices,
-            this.colAmount,
-            this.colPay});
+            this.tendv,
+            this.dongia,
+            this.soluong,
+            this.total});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -242,32 +246,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // Services
-            // 
-            this.Services.HeaderText = "Services";
-            this.Services.Name = "Services";
-            // 
-            // colprices
-            // 
-            this.colprices.FillWeight = 60F;
-            this.colprices.HeaderText = "Prices";
-            this.colprices.Name = "colprices";
-            this.colprices.ReadOnly = true;
-            // 
-            // colAmount
-            // 
-            this.colAmount.FillWeight = 50F;
-            this.colAmount.HeaderText = "Amount";
-            this.colAmount.Name = "colAmount";
-            this.colAmount.ReadOnly = true;
-            // 
-            // colPay
-            // 
-            this.colPay.FillWeight = 70F;
-            this.colPay.HeaderText = "Pay";
-            this.colPay.Name = "colPay";
-            this.colPay.ReadOnly = true;
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.guna2Panel7);
@@ -280,14 +258,18 @@
             // 
             // guna2Panel7
             // 
+            this.guna2Panel7.Controls.Add(this.tbcheckout);
+            this.guna2Panel7.Controls.Add(this.guna2TextBox11);
+            this.guna2Panel7.Controls.Add(this.tbCheckin);
+            this.guna2Panel7.Controls.Add(this.guna2TextBox9);
             this.guna2Panel7.Controls.Add(this.tbTime);
             this.guna2Panel7.Controls.Add(this.tbRoomNumber);
             this.guna2Panel7.Controls.Add(this.guna2TextBox5);
             this.guna2Panel7.Controls.Add(this.guna2TextBox4);
             this.guna2Panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel7.Location = new System.Drawing.Point(303, 0);
+            this.guna2Panel7.Location = new System.Drawing.Point(297, 0);
             this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(183, 128);
+            this.guna2Panel7.Size = new System.Drawing.Size(189, 128);
             this.guna2Panel7.TabIndex = 1;
             // 
             // tbTime
@@ -300,16 +282,16 @@
             this.tbTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTime.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTime.ForeColor = System.Drawing.Color.Black;
             this.tbTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTime.Location = new System.Drawing.Point(76, 72);
+            this.tbTime.Location = new System.Drawing.Point(54, 45);
             this.tbTime.Name = "tbTime";
             this.tbTime.PasswordChar = '\0';
             this.tbTime.PlaceholderText = "";
             this.tbTime.ReadOnly = true;
             this.tbTime.SelectedText = "";
-            this.tbTime.Size = new System.Drawing.Size(71, 19);
+            this.tbTime.Size = new System.Drawing.Size(101, 19);
             this.tbTime.TabIndex = 8;
             this.tbTime.WordWrap = false;
             // 
@@ -323,16 +305,16 @@
             this.tbRoomNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbRoomNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbRoomNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRoomNumber.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRoomNumber.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbRoomNumber.ForeColor = System.Drawing.Color.Black;
             this.tbRoomNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRoomNumber.Location = new System.Drawing.Point(76, 47);
+            this.tbRoomNumber.Location = new System.Drawing.Point(54, 20);
             this.tbRoomNumber.Name = "tbRoomNumber";
             this.tbRoomNumber.PasswordChar = '\0';
             this.tbRoomNumber.PlaceholderText = "";
             this.tbRoomNumber.ReadOnly = true;
             this.tbRoomNumber.SelectedText = "";
-            this.tbRoomNumber.Size = new System.Drawing.Size(71, 19);
+            this.tbRoomNumber.Size = new System.Drawing.Size(117, 19);
             this.tbRoomNumber.TabIndex = 7;
             this.tbRoomNumber.WordWrap = false;
             // 
@@ -346,10 +328,10 @@
             this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox5.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.Location = new System.Drawing.Point(6, 72);
+            this.guna2TextBox5.Location = new System.Drawing.Point(3, 45);
             this.guna2TextBox5.Name = "guna2TextBox5";
             this.guna2TextBox5.PasswordChar = '\0';
             this.guna2TextBox5.PlaceholderText = "";
@@ -358,6 +340,7 @@
             this.guna2TextBox5.Size = new System.Drawing.Size(71, 19);
             this.guna2TextBox5.TabIndex = 5;
             this.guna2TextBox5.WordWrap = false;
+            this.guna2TextBox5.TextChanged += new System.EventHandler(this.guna2TextBox5_TextChanged);
             // 
             // guna2TextBox4
             // 
@@ -369,10 +352,10 @@
             this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox4.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Location = new System.Drawing.Point(6, 47);
+            this.guna2TextBox4.Location = new System.Drawing.Point(3, 20);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '\0';
             this.guna2TextBox4.PlaceholderText = "";
@@ -394,7 +377,7 @@
             this.guna2Panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel6.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(303, 128);
+            this.guna2Panel6.Size = new System.Drawing.Size(297, 128);
             this.guna2Panel6.TabIndex = 0;
             // 
             // tbAccountName
@@ -407,16 +390,16 @@
             this.tbAccountName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbAccountName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbAccountName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAccountName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAccountName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAccountName.ForeColor = System.Drawing.Color.Black;
             this.tbAccountName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAccountName.Location = new System.Drawing.Point(96, 97);
+            this.tbAccountName.Location = new System.Drawing.Point(70, 97);
             this.tbAccountName.Name = "tbAccountName";
             this.tbAccountName.PasswordChar = '\0';
             this.tbAccountName.PlaceholderText = "";
             this.tbAccountName.ReadOnly = true;
             this.tbAccountName.SelectedText = "";
-            this.tbAccountName.Size = new System.Drawing.Size(149, 19);
+            this.tbAccountName.Size = new System.Drawing.Size(175, 19);
             this.tbAccountName.TabIndex = 6;
             this.tbAccountName.WordWrap = false;
             // 
@@ -430,16 +413,16 @@
             this.tbIDBill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbIDBill.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbIDBill.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbIDBill.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbIDBill.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbIDBill.ForeColor = System.Drawing.Color.Black;
             this.tbIDBill.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbIDBill.Location = new System.Drawing.Point(96, 72);
+            this.tbIDBill.Location = new System.Drawing.Point(70, 72);
             this.tbIDBill.Name = "tbIDBill";
             this.tbIDBill.PasswordChar = '\0';
             this.tbIDBill.PlaceholderText = "";
             this.tbIDBill.ReadOnly = true;
             this.tbIDBill.SelectedText = "";
-            this.tbIDBill.Size = new System.Drawing.Size(149, 19);
+            this.tbIDBill.Size = new System.Drawing.Size(175, 19);
             this.tbIDBill.TabIndex = 5;
             this.tbIDBill.WordWrap = false;
             // 
@@ -453,16 +436,16 @@
             this.tbDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDate.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDate.ForeColor = System.Drawing.Color.Black;
             this.tbDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDate.Location = new System.Drawing.Point(96, 47);
+            this.tbDate.Location = new System.Drawing.Point(70, 47);
             this.tbDate.Name = "tbDate";
             this.tbDate.PasswordChar = '\0';
             this.tbDate.PlaceholderText = "";
             this.tbDate.ReadOnly = true;
             this.tbDate.SelectedText = "";
-            this.tbDate.Size = new System.Drawing.Size(149, 19);
+            this.tbDate.Size = new System.Drawing.Size(193, 19);
             this.tbDate.TabIndex = 4;
             this.tbDate.WordWrap = false;
             // 
@@ -476,7 +459,7 @@
             this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox3.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox3.Location = new System.Drawing.Point(19, 97);
@@ -499,7 +482,7 @@
             this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.Location = new System.Drawing.Point(19, 72);
@@ -522,7 +505,7 @@
             this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.Location = new System.Drawing.Point(19, 47);
@@ -556,7 +539,7 @@
             this.tbCustomerName.PlaceholderText = "";
             this.tbCustomerName.ReadOnly = true;
             this.tbCustomerName.SelectedText = "";
-            this.tbCustomerName.Size = new System.Drawing.Size(226, 34);
+            this.tbCustomerName.Size = new System.Drawing.Size(244, 34);
             this.tbCustomerName.TabIndex = 0;
             this.tbCustomerName.WordWrap = false;
             // 
@@ -623,6 +606,124 @@
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // tendv
+            // 
+            this.tendv.HeaderText = "Services";
+            this.tendv.Name = "tendv";
+            // 
+            // dongia
+            // 
+            this.dongia.FillWeight = 60F;
+            this.dongia.HeaderText = "Prices";
+            this.dongia.Name = "dongia";
+            this.dongia.ReadOnly = true;
+            // 
+            // soluong
+            // 
+            this.soluong.FillWeight = 50F;
+            this.soluong.HeaderText = "Amount";
+            this.soluong.Name = "soluong";
+            this.soluong.ReadOnly = true;
+            // 
+            // total
+            // 
+            this.total.FillWeight = 70F;
+            this.total.HeaderText = "Pay";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            // 
+            // tbCheckin
+            // 
+            this.tbCheckin.BorderThickness = 0;
+            this.tbCheckin.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCheckin.DefaultText = "guna2TextBox8";
+            this.tbCheckin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbCheckin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbCheckin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCheckin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCheckin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCheckin.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCheckin.ForeColor = System.Drawing.Color.Black;
+            this.tbCheckin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCheckin.Location = new System.Drawing.Point(54, 74);
+            this.tbCheckin.Name = "tbCheckin";
+            this.tbCheckin.PasswordChar = '\0';
+            this.tbCheckin.PlaceholderText = "";
+            this.tbCheckin.ReadOnly = true;
+            this.tbCheckin.SelectedText = "";
+            this.tbCheckin.Size = new System.Drawing.Size(132, 18);
+            this.tbCheckin.TabIndex = 10;
+            this.tbCheckin.WordWrap = false;
+            // 
+            // guna2TextBox9
+            // 
+            this.guna2TextBox9.BorderThickness = 0;
+            this.guna2TextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox9.DefaultText = "checkin:";
+            this.guna2TextBox9.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox9.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox9.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox9.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox9.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox9.Location = new System.Drawing.Point(0, 74);
+            this.guna2TextBox9.Name = "guna2TextBox9";
+            this.guna2TextBox9.PasswordChar = '\0';
+            this.guna2TextBox9.PlaceholderText = "";
+            this.guna2TextBox9.ReadOnly = true;
+            this.guna2TextBox9.SelectedText = "";
+            this.guna2TextBox9.Size = new System.Drawing.Size(61, 17);
+            this.guna2TextBox9.TabIndex = 9;
+            this.guna2TextBox9.WordWrap = false;
+            // 
+            // tbcheckout
+            // 
+            this.tbcheckout.BorderThickness = 0;
+            this.tbcheckout.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbcheckout.DefaultText = "guna2TextBox10";
+            this.tbcheckout.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbcheckout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbcheckout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbcheckout.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbcheckout.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbcheckout.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbcheckout.ForeColor = System.Drawing.Color.Black;
+            this.tbcheckout.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbcheckout.Location = new System.Drawing.Point(54, 97);
+            this.tbcheckout.Name = "tbcheckout";
+            this.tbcheckout.PasswordChar = '\0';
+            this.tbcheckout.PlaceholderText = "";
+            this.tbcheckout.ReadOnly = true;
+            this.tbcheckout.SelectedText = "";
+            this.tbcheckout.Size = new System.Drawing.Size(132, 17);
+            this.tbcheckout.TabIndex = 12;
+            this.tbcheckout.WordWrap = false;
+            // 
+            // guna2TextBox11
+            // 
+            this.guna2TextBox11.BorderThickness = 0;
+            this.guna2TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox11.DefaultText = "checkout";
+            this.guna2TextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox11.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox11.Location = new System.Drawing.Point(0, 97);
+            this.guna2TextBox11.Name = "guna2TextBox11";
+            this.guna2TextBox11.PasswordChar = '\0';
+            this.guna2TextBox11.PlaceholderText = "";
+            this.guna2TextBox11.ReadOnly = true;
+            this.guna2TextBox11.SelectedText = "";
+            this.guna2TextBox11.Size = new System.Drawing.Size(74, 17);
+            this.guna2TextBox11.TabIndex = 11;
+            this.guna2TextBox11.WordWrap = false;
+            // 
             // FormBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -658,10 +759,6 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Services;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colprices;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPay;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2TextBox tbTime;
@@ -681,5 +778,13 @@
         private Guna.UI2.WinForms.Guna2TextBox tbTotal;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tendv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dongia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private Guna.UI2.WinForms.Guna2TextBox tbcheckout;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox11;
+        private Guna.UI2.WinForms.Guna2TextBox tbCheckin;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox9;
     }
 }

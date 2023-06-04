@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using QLKS.DAO;
+using QLKS.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace QLKS
@@ -15,6 +19,7 @@ namespace QLKS
         public FormServices()
         {
             InitializeComponent();
+            loadServices();
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -51,10 +56,11 @@ namespace QLKS
 
         private void guna2ButtonEdit_Click(object sender, EventArgs e)
         {
-            if (selectedRow != null)
+            if (guna2DataGridView1.SelectedRows.Count > 0)
             {
-                // Hiển thị form edit
-                FormEditServices a = new FormEditServices();
+                DataGridViewRow row = guna2DataGridView1.CurrentRow;
+                DV dv = RowToDV(row);
+                FormEditServices a = new FormEditServices(dv);
                 a.ShowDialog();
             }
             else
@@ -66,13 +72,15 @@ namespace QLKS
 
         private void guna2ButtonDelete_Click(object sender, EventArgs e)
         {
-            if (selectedRow != null)
+            if (guna2DataGridView1.SelectedRows.Count > 0)
             {
                 DialogResult result = MessageBox.Show("Are you sure?", "Confirm!", MessageBoxButtons.OKCancel);
                 if (result == DialogResult.OK)
                 {
-                    // Thực hiện xóa dữ liệu
-
+                    DataGridViewRow row = guna2DataGridView1.CurrentRow;
+                    DV dv = RowToDV(row);
+                    DVDAO.Instance.DeleteDV(dv.ID);
+                    guna2DataGridView1.Rows.Remove(row);
                 }
                 else if (result == DialogResult.Cancel)
                 {
@@ -89,8 +97,41 @@ namespace QLKS
 
         private void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormEditServices formEditServices = new FormEditServices(); 
+            DataGridViewRow row = guna2DataGridView1.CurrentRow;
+            DV dv = RowToDV(row);
+            FormEditServices formEditServices = new FormEditServices(dv); 
             formEditServices.ShowDialog();
+        }
+
+        public DV RowToDV(DataGridViewRow row)
+        {
+            DV dv = new DV();
+            dv.ID = (int)row.Cells["colID"].Value;
+            dv.GiaDV = (decimal)row.Cells["colPrices"].Value;
+            dv.TenDV = row.Cells["colName"].Value.ToString();
+            dv.LoaiDV = row.Cells["colType"].Value.ToString();
+            return dv;
+        }
+
+        public DataGridViewRow DVToRow(DV dv)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+
+            row.CreateCells(guna2DataGridView1,
+                      dv.ID, dv.TenDV, dv.LoaiDV, dv.GiaDV );
+            return row;
+        }
+
+        public void loadServices()
+        {
+            guna2DataGridView1.Rows.Clear();
+            List<DV> lstDV = DVDAO.Instance.GetAllDV();
+
+            foreach (DV dv in lstDV)
+            {
+                DataGridViewRow row = DVToRow(dv);
+                guna2DataGridView1.Rows.Add(row);
+            }
         }
     }
 }

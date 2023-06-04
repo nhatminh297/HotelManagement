@@ -1,4 +1,7 @@
 ﻿using Guna.UI2.WinForms;
+using QLKS.DAO;
+using QLKS.DTO;
+using QLKS.FormManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,20 +17,22 @@ namespace QLKS.FormAccount
     //chinh ma nv khong the thay doi, co the dung label
     public partial class FormEditAccount : Form
     {
-        string manv,username,password,role;
-        public FormEditAccount()
-        {
-            tbMaNhanVien.Enabled = false;
-            InitializeComponent();
-        }
+        private int manv;
+        private string Role;
+        private int thisId;
+
+        public int Manv { get => manv; set => manv = value; }
+        public string Role1 { get => Role; set => Role = value; }
+        public int ThisId { get => thisId; set => thisId = value; }
         
-        public FormEditAccount(string Manv,string Username,string Password, string Role)
+        public FormEditAccount(int thisid, int Manv, string role)
         {
             InitializeComponent();
-            manv = Manv;
-            username = Username;    
-            password = Password;
-            role = Role;
+            this.Manv = Manv;
+            this.Role1 = role;
+            this.ThisId = thisid;
+            FormEditAccount_Load();
+
         }
 
         private void tbMaNhanVien_Enter(object sender, EventArgs e)
@@ -37,7 +42,6 @@ namespace QLKS.FormAccount
             {
                 tb.Text = "";
                 tb.ForeColor = Color.Black;
-                tbMaNhanVien.Enabled = false;
             }
         }
 
@@ -92,12 +96,10 @@ namespace QLKS.FormAccount
             }
         }
 
-        private void FormEditAccount_Load(object sender, EventArgs e)
+        private void FormEditAccount_Load()
         {
-            tbMaNhanVien.Text = manv;
-            tbusername.Text = username;
-            tbpassword.Text = password;
-            tbPhanQuyen.Text = role;
+            lbManv.Text = "Mã tài khoản: " + Manv;
+            cbRole.SelectedIndex = cbRole.Items.IndexOf(Role);
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -105,34 +107,74 @@ namespace QLKS.FormAccount
             this.Close();
         }
 
-        private void tbPhanQuyen_Enter(object sender, EventArgs e)
-        {
-            Guna2TextBox tb = (Guna2TextBox)sender;
-            if (tb.Text == "Phân quyền")
-            {
-                tb.Text = "";
-                tb.ForeColor = Color.Black;
-            }
-        }
-
-        private void tbPhanQuyen_Leave(object sender, EventArgs e)
-        {
-            Guna2TextBox textBox = (Guna2TextBox)sender;
-            if (string.IsNullOrWhiteSpace(textBox.Text))
-            {
-                textBox.Text = "Phân quyền";
-                textBox.ForeColor = Color.Gray;
-            }
-        }
-
-        Modify modify = new Modify();
+        
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string query = "update accounts set username='" + tbusername.Text + "', password='" + tbpassword.Text + "', role='" + tbPhanQuyen.Text + "'";
-            MessageBox.Show("Cap nhat thanh cong");
-            this.Close();
-            modify.Command(query);
+
+            string password = tbpassword.Text;
+            if (!checkPassword(password))
+            {
+                MessageBox.Show("Kiểm tra lại mật khẩu");
+                return;
+            }
+
+            if (thisId == Manv && cbRole.Text != "Admin")
+            {
+                Role = "Admin";
+            }
+            else
+                Role = cbRole.Text;
+
+            string username = tbusername.Text;
+
+
+            if(AccountsDAO.Instance.UpdateUsername_password(Manv, username, password, Role) != 0)
+            {
+                MessageBox.Show("Cập nhật thành công!");
+                FormManageAccount form = Application.OpenForms.OfType<FormManageAccount>().FirstOrDefault();
+                if(form != null)
+                {
+                    form.LoadAccount();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại!");
+            }
+        }
+
+        public bool checkPassword(string password)
+        {
+            bool containsDigit = password.Any(char.IsDigit);
+            bool containsUpperCase = password.Any(char.IsUpper);
+            bool containsLowerCase = password.Any(char.IsLower);
+            bool containsSpecialCharacter = password.Any(c => !char.IsLetterOrDigit(c));
+
+            if (containsDigit && containsUpperCase && containsLowerCase && containsSpecialCharacter)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void tbpassword_TextChanged(object sender, EventArgs e)
+        {
+            string password = tbpassword.Text;
+
+            if (checkPassword(password))
+            {
+                guna2HtmlLabel1.Visible = false;
+            }
+            else
+            {
+                // Mật khẩu không đáp ứng yêu cầu, cung cấp phản hồi người dùng tại đây
+                // ...
+                guna2HtmlLabel1.Visible=true;
+            }
         }
     }
 }

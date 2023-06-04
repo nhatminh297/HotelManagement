@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLKS.DAO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -48,7 +49,9 @@ namespace QLKS.DTO
             this.Tenloaiphong=tenloaiphong;
             this.Giamoigio=giamoigio;
             this.Checkin=checkin;
-            this.Checkout=checkout;
+            var dateCheckOutTemp = checkout;
+            if(dateCheckOutTemp.ToString() != "")
+                this.Checkout=checkout;
             this.Prices=prices;
             this.Trangthai=trangthai;
 
@@ -65,8 +68,10 @@ namespace QLKS.DTO
             this.Sophong = (int)row["SoPhong"];
             this.Tenloaiphong = row["TenLoaiPhong"].ToString();
             this.Giamoigio = (decimal)row["GiaMoiGio"];
-            this.Checkin = Convert.ToDateTime(row["Checkin"]);
-            this.Checkout = Convert.ToDateTime(row["Checkout"]);
+            this.Checkin = row.Field<DateTime>("Checkin");
+            var dateCheckOutTemp = row.Field<DateTime>("Checkout");
+            if (dateCheckOutTemp.ToString() != "")
+                this.Checkout = (DateTime)dateCheckOutTemp;
             this.Prices = (decimal)row["Prices"];
             this.Trangthai = row["TrangThai"].ToString();
         }

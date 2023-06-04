@@ -1,4 +1,6 @@
 ﻿using Guna.UI2.WinForms;
+using QLKS.DAO;
+using QLKS.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +18,6 @@ namespace QLKS.FormManager
 {
     public partial class FormAddAccount : Form
     {
-        public delegate void truyendulieu();
-        public truyendulieu truyen;
         public FormAddAccount()
         {
             InitializeComponent();
@@ -137,34 +137,38 @@ namespace QLKS.FormManager
             }
         }
 
+
         private void btAddAccount_Click(object sender, EventArgs e)
         {
-        }
-        
-        Modify modify=new Modify();
-        int i = 103;
-        private void btAddAccount_Click_1(object sender, EventArgs e)
-        {
-            string manv=i.ToString();
-            string hoten = guna2TextBox1.Text;
-            int sdt = int.Parse(guna2TextBox2.Text);
-            string ngaysinh = guna2DateTimePicker1.Text;
-            string diachi = guna2TextBox3.Text;
-            string role = guna2ComboBox1.Text;
-            string username = guna2TextBox5.Text;
-            string password = guna2TextBox6.Text;
-            try
-            { 
-                string query = "insert into Accounts values( '"+manv+"' ,'" + hoten + "', '" + ngaysinh + "','" + diachi + "','" + sdt + "','" + role + "','" + username + "','" + password + "')";
-                modify.Command(query);
-                MessageBox.Show("DK Thanh Cong");
-                i++;
-                FormAddAccount formAddAccount = new FormAddAccount();
-            }
-            catch(Exception ex)
+
+            Accounts acc = new Accounts();
+            acc.Password = tbPassword.Text;
+            if (!checkPassword(acc.Password))
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Kiểm tra lại mật khẩu");
+                return;
             }
+            acc.HoTen = tbName.Text;
+            acc.DienThoai = tbPhone.Text;
+            string ngaysinh = guna2DateTimePicker1.Text;
+            acc.DiaChi = tbAddress.Text;
+            acc.Role = cbRole.Text;
+            acc.Username = tbUsername.Text;
+
+            if(AccountsDAO.Instance.AddAccounts(acc) != 0)
+            {
+                MessageBox.Show("Thêm tài khoản thành công.");
+                FormManageAccount form = Application.OpenForms.OfType<FormManageAccount>().FirstOrDefault();
+                if(form != null)
+                {
+                    form.LoadAccount();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Thêm tài khoản thất bại.");
+            }
+
         }
 
         private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -175,6 +179,42 @@ namespace QLKS.FormManager
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public bool checkPassword(string password)
+        {
+            bool containsDigit = password.Any(char.IsDigit);
+            bool containsUpperCase = password.Any(char.IsUpper);
+            bool containsLowerCase = password.Any(char.IsLower);
+            bool containsSpecialCharacter = password.Any(c => !char.IsLetterOrDigit(c));
+
+            if (containsDigit && containsUpperCase && containsLowerCase && containsSpecialCharacter)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+            string password = tbPassword.Text;
+
+            if (checkPassword(password))
+            {
+                guna2HtmlLabel2.Visible = false;
+            }
+            else
+            {
+                guna2HtmlLabel2.Visible = true;
+            }
+        }
+
+        private void tbPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

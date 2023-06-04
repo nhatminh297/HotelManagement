@@ -69,7 +69,7 @@
             iconExit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             iconExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconExit.IconSize = 20;
-            iconExit.Location = new System.Drawing.Point(871, 3);
+            iconExit.Location = new System.Drawing.Point(921, 3);
             iconExit.Name = "iconExit";
             iconExit.Size = new System.Drawing.Size(30, 20);
             iconExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -85,7 +85,7 @@
             this.guna2pnShadow.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.guna2pnShadow.Location = new System.Drawing.Point(180, 65);
             this.guna2pnShadow.Name = "guna2pnShadow";
-            this.guna2pnShadow.Size = new System.Drawing.Size(904, 7);
+            this.guna2pnShadow.Size = new System.Drawing.Size(954, 7);
             this.guna2pnShadow.TabIndex = 4;
             // 
             // iconCurrentChildForm
@@ -114,10 +114,10 @@
             this.btReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btReport.IconSize = 32;
             this.btReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btReport.Location = new System.Drawing.Point(0, 365);
+            this.btReport.Location = new System.Drawing.Point(0, 395);
             this.btReport.Name = "btReport";
             this.btReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btReport.Size = new System.Drawing.Size(180, 50);
+            this.btReport.Size = new System.Drawing.Size(180, 56);
             this.btReport.TabIndex = 8;
             this.btReport.Text = "Report";
             this.btReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -137,10 +137,10 @@
             this.btAccounts.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btAccounts.IconSize = 32;
             this.btAccounts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btAccounts.Location = new System.Drawing.Point(0, 315);
+            this.btAccounts.Location = new System.Drawing.Point(0, 339);
             this.btAccounts.Name = "btAccounts";
             this.btAccounts.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btAccounts.Size = new System.Drawing.Size(180, 50);
+            this.btAccounts.Size = new System.Drawing.Size(180, 56);
             this.btAccounts.TabIndex = 5;
             this.btAccounts.Text = "Accounts";
             this.btAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,7 +160,7 @@
             this.btLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btLogout.IconSize = 32;
             this.btLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLogout.Location = new System.Drawing.Point(0, 511);
+            this.btLogout.Location = new System.Drawing.Point(0, 561);
             this.btLogout.Name = "btLogout";
             this.btLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btLogout.Size = new System.Drawing.Size(180, 50);
@@ -183,10 +183,10 @@
             this.btServices.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btServices.IconSize = 32;
             this.btServices.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btServices.Location = new System.Drawing.Point(0, 265);
+            this.btServices.Location = new System.Drawing.Point(0, 283);
             this.btServices.Name = "btServices";
             this.btServices.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btServices.Size = new System.Drawing.Size(180, 50);
+            this.btServices.Size = new System.Drawing.Size(180, 56);
             this.btServices.TabIndex = 4;
             this.btServices.Text = "Services";
             this.btServices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,10 +206,10 @@
             this.Room.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Room.IconSize = 32;
             this.Room.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Room.Location = new System.Drawing.Point(0, 215);
+            this.Room.Location = new System.Drawing.Point(0, 227);
             this.Room.Name = "Room";
             this.Room.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.Room.Size = new System.Drawing.Size(180, 50);
+            this.Room.Size = new System.Drawing.Size(180, 56);
             this.Room.TabIndex = 3;
             this.Room.Text = "Rooms";
             this.Room.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,10 +229,10 @@
             this.btCustomer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btCustomer.IconSize = 32;
             this.btCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btCustomer.Location = new System.Drawing.Point(0, 165);
+            this.btCustomer.Location = new System.Drawing.Point(0, 171);
             this.btCustomer.Name = "btCustomer";
             this.btCustomer.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btCustomer.Size = new System.Drawing.Size(180, 50);
+            this.btCustomer.Size = new System.Drawing.Size(180, 56);
             this.btCustomer.TabIndex = 2;
             this.btCustomer.Text = "Customer";
             this.btCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -255,7 +255,7 @@
             this.btBooking.Location = new System.Drawing.Point(0, 115);
             this.btBooking.Name = "btBooking";
             this.btBooking.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btBooking.Size = new System.Drawing.Size(180, 50);
+            this.btBooking.Size = new System.Drawing.Size(180, 56);
             this.btBooking.TabIndex = 1;
             this.btBooking.Text = "Booking";
             this.btBooking.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -284,7 +284,7 @@
             this.iconMaximize.IconColor = System.Drawing.Color.Gainsboro;
             this.iconMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMaximize.IconSize = 20;
-            this.iconMaximize.Location = new System.Drawing.Point(835, 3);
+            this.iconMaximize.Location = new System.Drawing.Point(885, 3);
             this.iconMaximize.Name = "iconMaximize";
             this.iconMaximize.Size = new System.Drawing.Size(30, 20);
             this.iconMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -332,7 +332,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(180, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(904, 65);
+            this.panel1.Size = new System.Drawing.Size(954, 65);
             this.panel1.TabIndex = 6;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -345,7 +345,7 @@
             this.iconMinimize.IconColor = System.Drawing.Color.Gainsboro;
             this.iconMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMinimize.IconSize = 20;
-            this.iconMinimize.Location = new System.Drawing.Point(799, 3);
+            this.iconMinimize.Location = new System.Drawing.Point(849, 3);
             this.iconMinimize.Name = "iconMinimize";
             this.iconMinimize.Size = new System.Drawing.Size(30, 20);
             this.iconMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -367,7 +367,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(180, 561);
+            this.panelMenu.Size = new System.Drawing.Size(180, 611);
             this.panelMenu.TabIndex = 5;
             // 
             // panelDesktop
@@ -377,14 +377,14 @@
             this.panelDesktop.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelDesktop.Location = new System.Drawing.Point(180, 72);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(904, 489);
+            this.panelDesktop.Size = new System.Drawing.Size(954, 539);
             this.panelDesktop.TabIndex = 8;
             // 
             // FormMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 561);
+            this.ClientSize = new System.Drawing.Size(1134, 611);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.guna2pnShadow);
             this.Controls.Add(this.panel1);

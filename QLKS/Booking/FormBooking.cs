@@ -1,10 +1,14 @@
 ﻿using Guna.UI2.WinForms;
+using QLKS.DAO;
+using QLKS.DTO;
+using QLKS.FormManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,20 +17,42 @@ namespace QLKS
 {
     public partial class FormBooking : Form
     {
-        public FormBooking()
+        private int Id;
+        public FormBooking(int id)
         {
+            this.Id = id;
             InitializeComponent();
+            ShowBills();
         }
 
-      
+        public void ShowBills()
+        {
+            guna2DataGridView2.Rows.Clear();
+            List<Bill> uncheckedBill = BillDAO.Instance.GetUncheckedBills();
 
+            foreach (Bill bill in uncheckedBill)
+            {
+                string name = KhachHangDAO.Instance.GetNameFromID(bill.Makh);
+
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(guna2DataGridView2,
+                    bill.ID, name, bill.Sophong, 
+                    bill.Checkin, bill.Checkout, bill.Prices, 
+                    bill.Makh, bill.Manv, bill.Maphong, 
+                    bill.Tenloaiphong, bill.Giamoigio, bill.Trangthai
+                    );
+                guna2DataGridView2.Rows.Add( row );
+
+            }
+
+        }
         
-
 
         private void btAddBooking_Click(object sender, EventArgs e)
         {
-            FormAddBooking formAddBooking = new FormAddBooking();
-            formAddBooking.ShowDialog();
+            //Bill bill = ConvertRowtoBill(guna2DataGridView2.CurrentRow);
+            FormMainMenu formmainmenu = Application.OpenForms.OfType<FormMainMenu>().FirstOrDefault();
+            formmainmenu.OpenChildForm(new FormAddBooking(Id));
         }
 
         private DataGridViewRow selectedRow;
@@ -57,12 +83,27 @@ namespace QLKS
 
         private void btMakeBill_Click(object sender, EventArgs e)
         {
+            
             // Kiểm tra xem đã chọn dòng dữ liệu hay chưa
-            if (selectedRow != null)
+            if (selectedRow != null) 
             {
                 // Hiển thị form mới
-                FormBill newForm = new FormBill();
-                newForm.ShowDialog();
+                Bill hoadon = ConvertRowtoBill(guna2DataGridView2.CurrentRow);
+                int sophong = hoadon.Sophong;
+                string question = "Thanh toán hóa đơn cho phòng " + sophong.ToString();
+                DialogResult result = MessageBox.Show(question, "Confirm!", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    BillDAO.Instance.PayBill(hoadon.ID, hoadon.Sophong);
+                    guna2DataGridView2.Rows.Remove(guna2DataGridView2.CurrentRow);
+                    FormBill newForm = new FormBill(hoadon.ID);
+                    newForm.ShowDialog();
+                }
+                else if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
+
             }
             else
             {
@@ -92,10 +133,28 @@ namespace QLKS
             }
         }
 
+        public Bill ConvertRowtoBill(DataGridViewRow selectedRow)
+        {
+            Bill bill = new Bill();
+            bill.ID = (int)selectedRow.Cells["id"].Value;
+            bill.Makh = (int)selectedRow.Cells["makh"].Value;
+            bill.Manv = (int)selectedRow.Cells["manv"].Value;
+            bill.Maphong = (int)selectedRow.Cells["maphong"].Value;
+            bill.Sophong = (int)selectedRow.Cells["sophong"].Value;
+            bill.Tenloaiphong = selectedRow.Cells["tenloaiphong"].Value.ToString();
+            bill.Giamoigio = (decimal)selectedRow.Cells["giamoigio"].Value;
+            bill.Checkin = (DateTime)selectedRow.Cells["Checkin"].Value;
+            bill.Checkout = (DateTime)selectedRow.Cells["checkout"].Value;
+            bill.Prices = (decimal)selectedRow.Cells["prices"].Value;
+            bill.Trangthai = selectedRow.Cells["trangthai"].Value.ToString();
+            return bill;
+        }
+
         private void guna2DataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormEditBooking formAddBooking = new FormEditBooking();
-            formAddBooking.ShowDialog();
+            Bill bill = ConvertRowtoBill(guna2DataGridView2.CurrentRow);
+            FormMainMenu formmainmenu = Application.OpenForms.OfType<FormMainMenu>().FirstOrDefault();
+            formmainmenu.OpenChildForm(new FormEditBooking(bill));
         }
 
 
@@ -108,14 +167,17 @@ namespace QLKS
                 DialogResult result = MessageBox.Show("Are you sure?", "Confirm!", MessageBoxButtons.OKCancel);
                 if (result == DialogResult.OK)
                 {
-                    // Thực hiện xóa dữ liệu
+                    
+                    Bill bill = ConvertRowtoBill(selectedRow);
+                    BillDAO.Instance.DeleteBill(bill);
+                    guna2DataGridView2.Rows.Remove(guna2DataGridView2.CurrentRow);
+                    ShowBills();
 
                 }
                 else if (result == DialogResult.Cancel)
                 {
-                    // Hủy bỏ thao tác xóa
+                    return;
                 }
-
             }
             else
             {
@@ -128,11 +190,13 @@ namespace QLKS
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (selectedRow != null)
+            if (guna2DataGridView2.SelectedRows.Count > 0 )
             {
+                
+                Bill bill = ConvertRowtoBill(guna2DataGridView2.CurrentRow);
 
-                //
-
+                FormMainMenu formmainmenu = Application.OpenForms.OfType<FormMainMenu>().FirstOrDefault();
+                formmainmenu.OpenChildForm(new FormEditBooking(bill));
             }
             else
             {

@@ -9,20 +9,67 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
+using QLKS.DTO;
+using QLKS.DAO;
 
 namespace QLKS
 {
     public partial class FormBill : Form
     {
-        public FormBill()
+        private int mahd;
+
+        public FormBill(int idbill)
         {
             InitializeComponent();
+            this.Mahd = idbill;
+            loadBill(mahd);
             printDocument = new PrintDocument();
-            printDocument.PrintPage += PrintDocument_PrintPage;
+            printDocument.PrintPage += PrintDocument_PrintPage; 
         }
 
         private PrintDocument printDocument;
+
+        public int Mahd { get => mahd; set => mahd = value; }
+
+        public void loadBill(int mahd)
+        {
+            Bill hoadon = BillDAO.Instance.GetHoaDonByID(mahd);
+            string tenkh = KhachHangDAO.Instance.GetNameFromID(hoadon.Makh);
+            tbCustomerName.Text = tenkh;
+            DateTime currentDateTime = DateTime.Now;
+            tbDate.Text = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            tbIDBill.Text = hoadon.ID.ToString();
+            tbAccountName.Text = AccountsDAO.Instance.GetNameFromID(hoadon.Manv);
+            tbRoomNumber.Text = hoadon.Sophong.ToString();
+
+            DateTime start = hoadon.Checkin;
+            DateTime end = hoadon.Checkout;
+            TimeSpan diff = end.Subtract(start);
+            tbTime.Text = Math.Ceiling(diff.TotalHours).ToString();
+
+            tbCheckin.Text = hoadon.Checkin.ToString();
+            tbcheckout.Text = hoadon.Checkout.ToString();
+            
+            //tông tiền
+            tbTotal.Text = hoadon.Prices.ToString("N2");
+
+            //lấy services bill
+
+            List<SvBill> svBills = SvBillDAO.Instance.GetSelectedSvBills(hoadon.ID);
+            foreach(SvBill svBill in svBills)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+
+                if (svBill != null)
+                {
+                    row.CreateCells(guna2DataGridView1,
+                       svBill.Tendv, svBill.Dongia, svBill.Soluong, svBill.Prices
+                        );
+                    guna2DataGridView1.Rows.Add(row);
+                }
+            }
+
+        }
 
         private void btPrint_Click(object sender, EventArgs e)
         {
@@ -89,6 +136,11 @@ namespace QLKS
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void guna2TextBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

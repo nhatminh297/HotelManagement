@@ -29,45 +29,58 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditAccount));
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.tbPhanQuyen = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbMaNhanVien = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbRole = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.lbManv = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.tbpassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbusername = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Panel1.SuspendLayout();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Panel1
+            // guna2Panel2
             // 
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2Panel1.Controls.Add(this.guna2Button2);
-            this.guna2Panel1.Controls.Add(this.btnUpdate);
-            this.guna2Panel1.Controls.Add(this.guna2Panel2);
-            this.guna2Panel1.Location = new System.Drawing.Point(20, 20);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(483, 546);
-            this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(120)))));
+            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel1);
+            this.guna2Panel2.Controls.Add(this.cbRole);
+            this.guna2Panel2.Controls.Add(this.guna2Button2);
+            this.guna2Panel2.Controls.Add(this.lbManv);
+            this.guna2Panel2.Controls.Add(this.btnUpdate);
+            this.guna2Panel2.Controls.Add(this.tbpassword);
+            this.guna2Panel2.Controls.Add(this.tbusername);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(311, 312);
+            this.guna2Panel2.TabIndex = 0;
             // 
-            // guna2HtmlLabel1
+            // cbRole
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Nirmala UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(142, 18);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(207, 47);
-            this.guna2HtmlLabel1.TabIndex = 3;
-            this.guna2HtmlLabel1.Text = "Sửa tài khoản";
+            this.cbRole.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbRole.BackColor = System.Drawing.Color.Transparent;
+            this.cbRole.BorderRadius = 10;
+            this.cbRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbRole.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbRole.ItemHeight = 30;
+            this.cbRole.Items.AddRange(new object[] {
+            "Admin",
+            "Receptionist"});
+            this.cbRole.Location = new System.Drawing.Point(39, 189);
+            this.cbRole.Margin = new System.Windows.Forms.Padding(2);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(238, 36);
+            this.cbRole.StartIndex = 1;
+            this.cbRole.TabIndex = 100;
             // 
             // guna2Button2
             // 
+            this.guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Button2.BorderRadius = 10;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -76,16 +89,30 @@
             this.guna2Button2.FillColor = System.Drawing.Color.Gray;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(310, 449);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Button2.Location = new System.Drawing.Point(171, 241);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(129, 57);
+            this.guna2Button2.Size = new System.Drawing.Size(86, 37);
             this.guna2Button2.TabIndex = 2;
             this.guna2Button2.Text = "Thoát";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
+            // lbManv
+            // 
+            this.lbManv.AutoSize = false;
+            this.lbManv.BackColor = System.Drawing.Color.Transparent;
+            this.lbManv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbManv.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManv.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbManv.Location = new System.Drawing.Point(0, 0);
+            this.lbManv.Name = "lbManv";
+            this.lbManv.Size = new System.Drawing.Size(311, 64);
+            this.lbManv.TabIndex = 3;
+            this.lbManv.Text = "Mã Nhân Viên";
+            this.lbManv.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnUpdate
             // 
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUpdate.BorderRadius = 10;
             this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -94,77 +121,16 @@
             this.btnUpdate.FillColor = System.Drawing.Color.Green;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(148, 449);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Location = new System.Drawing.Point(63, 241);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(129, 57);
+            this.btnUpdate.Size = new System.Drawing.Size(86, 37);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.tbPhanQuyen);
-            this.guna2Panel2.Controls.Add(this.tbMaNhanVien);
-            this.guna2Panel2.Controls.Add(this.tbpassword);
-            this.guna2Panel2.Controls.Add(this.tbusername);
-            this.guna2Panel2.Location = new System.Drawing.Point(38, 77);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(402, 363);
-            this.guna2Panel2.TabIndex = 0;
-            // 
-            // tbPhanQuyen
-            // 
-            this.tbPhanQuyen.BorderRadius = 10;
-            this.tbPhanQuyen.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbPhanQuyen.DefaultText = "Phân quyền";
-            this.tbPhanQuyen.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbPhanQuyen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbPhanQuyen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPhanQuyen.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPhanQuyen.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPhanQuyen.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbPhanQuyen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPhanQuyen.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbPhanQuyen.IconLeft")));
-            this.tbPhanQuyen.Location = new System.Drawing.Point(22, 254);
-            this.tbPhanQuyen.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.tbPhanQuyen.Name = "tbPhanQuyen";
-            this.tbPhanQuyen.PasswordChar = '\0';
-            this.tbPhanQuyen.PlaceholderText = "";
-            this.tbPhanQuyen.SelectedText = "";
-            this.tbPhanQuyen.Size = new System.Drawing.Size(357, 55);
-            this.tbPhanQuyen.TabIndex = 3;
-            this.tbPhanQuyen.Enter += new System.EventHandler(this.tbPhanQuyen_Enter);
-            this.tbPhanQuyen.Leave += new System.EventHandler(this.tbPhanQuyen_Leave);
-            // 
-            // tbMaNhanVien
-            // 
-            this.tbMaNhanVien.BorderRadius = 10;
-            this.tbMaNhanVien.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbMaNhanVien.DefaultText = "Mã nhân viên";
-            this.tbMaNhanVien.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbMaNhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbMaNhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbMaNhanVien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbMaNhanVien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMaNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbMaNhanVien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMaNhanVien.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbMaNhanVien.IconLeft")));
-            this.tbMaNhanVien.Location = new System.Drawing.Point(24, 60);
-            this.tbMaNhanVien.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.tbMaNhanVien.Name = "tbMaNhanVien";
-            this.tbMaNhanVien.PasswordChar = '\0';
-            this.tbMaNhanVien.PlaceholderText = "";
-            this.tbMaNhanVien.ReadOnly = true;
-            this.tbMaNhanVien.SelectedText = "";
-            this.tbMaNhanVien.Size = new System.Drawing.Size(357, 55);
-            this.tbMaNhanVien.TabIndex = 99;
-            this.tbMaNhanVien.Enter += new System.EventHandler(this.tbMaNhanVien_Enter);
-            this.tbMaNhanVien.Leave += new System.EventHandler(this.tbMaNhanVien_Leave);
-            // 
             // tbpassword
             // 
+            this.tbpassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbpassword.BorderRadius = 10;
             this.tbpassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbpassword.DefaultText = "Password";
@@ -176,19 +142,21 @@
             this.tbpassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbpassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbpassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbpassword.IconLeft")));
-            this.tbpassword.Location = new System.Drawing.Point(24, 189);
-            this.tbpassword.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.tbpassword.Location = new System.Drawing.Point(39, 128);
+            this.tbpassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbpassword.Name = "tbpassword";
             this.tbpassword.PasswordChar = '\0';
             this.tbpassword.PlaceholderText = "";
             this.tbpassword.SelectedText = "";
-            this.tbpassword.Size = new System.Drawing.Size(357, 55);
+            this.tbpassword.Size = new System.Drawing.Size(238, 36);
             this.tbpassword.TabIndex = 2;
+            this.tbpassword.TextChanged += new System.EventHandler(this.tbpassword_TextChanged);
             this.tbpassword.Enter += new System.EventHandler(this.tbpassword_Enter);
             this.tbpassword.Leave += new System.EventHandler(this.tbpassword_Leave);
             // 
             // tbusername
             // 
+            this.tbusername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbusername.BorderRadius = 10;
             this.tbusername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbusername.DefaultText = "Username";
@@ -200,45 +168,54 @@
             this.tbusername.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbusername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbusername.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbusername.IconLeft")));
-            this.tbusername.Location = new System.Drawing.Point(22, 125);
-            this.tbusername.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.tbusername.Location = new System.Drawing.Point(39, 72);
+            this.tbusername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbusername.Name = "tbusername";
             this.tbusername.PasswordChar = '\0';
             this.tbusername.PlaceholderText = "";
             this.tbusername.SelectedText = "";
-            this.tbusername.Size = new System.Drawing.Size(357, 55);
+            this.tbusername.Size = new System.Drawing.Size(238, 36);
             this.tbusername.TabIndex = 1;
             this.tbusername.Enter += new System.EventHandler(this.tbusername_Enter);
             this.tbusername.Leave += new System.EventHandler(this.tbusername_Leave);
             // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Red;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(43, 169);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(106, 15);
+            this.guna2HtmlLabel1.TabIndex = 101;
+            this.guna2HtmlLabel1.Text = "mật khẩu chưa hợp lệ";
+            this.guna2HtmlLabel1.Visible = false;
+            // 
             // FormEditAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 585);
-            this.Controls.Add(this.guna2Panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ClientSize = new System.Drawing.Size(311, 312);
+            this.Controls.Add(this.guna2Panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormEditAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormEditAccount";
-            this.Load += new System.EventHandler(this.FormEditAccount_Load);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2TextBox tbPhanQuyen;
-        private Guna.UI2.WinForms.Guna2TextBox tbMaNhanVien;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbManv;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2TextBox tbpassword;
         private Guna.UI2.WinForms.Guna2TextBox tbusername;
+        private Guna.UI2.WinForms.Guna2ComboBox cbRole;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

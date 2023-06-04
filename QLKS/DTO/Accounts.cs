@@ -46,8 +46,9 @@ namespace QLKS.DTO
             Username = row["username"].ToString();
             Password = row["password"].ToString();
             DienThoai = row["dienThoai"].ToString();
-            DiaChi = row["diaChi"].ToString();
+            DiaChi = row["DiaChi"].ToString();
             Role = row["role"].ToString();
         }
+        
     }
 }

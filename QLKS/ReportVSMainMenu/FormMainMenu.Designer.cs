@@ -355,7 +355,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(68)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(21)))), ((int)(((byte)(68)))));
             this.panelMenu.Controls.Add(this.btReport);
             this.panelMenu.Controls.Add(this.btAccounts);
             this.panelMenu.Controls.Add(this.btLogout);

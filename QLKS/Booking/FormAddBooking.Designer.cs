@@ -156,7 +156,7 @@
             this.guna2ButtonDelete.Name = "guna2ButtonDelete";
             this.guna2ButtonDelete.Size = new System.Drawing.Size(126, 38);
             this.guna2ButtonDelete.TabIndex = 10;
-            this.guna2ButtonDelete.Text = "Cancle";
+            this.guna2ButtonDelete.Text = "Exit";
             this.guna2ButtonDelete.Click += new System.EventHandler(this.guna2ButtonDelete_Click);
             this.guna2ButtonDelete.MouseEnter += new System.EventHandler(this.guna2ButtonDelete_MouseHover);
             this.guna2ButtonDelete.MouseLeave += new System.EventHandler(this.guna2ButtonDelete_MouseLeave);

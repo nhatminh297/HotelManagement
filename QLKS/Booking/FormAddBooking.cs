@@ -642,6 +642,22 @@ namespace QLKS
             }
             else
             {
+                bool isExists = KhachHangDAO.Instance.IsExistsByCCCD(idCard);
+                KhachHang kh = new KhachHang();
+                if (isExists)
+                {
+                    kh = KhachHangDAO.Instance.getKHfromCCCD(idCard);
+                    DialogResult res = MessageBox.Show("CCCD đã tồn tại, Bạn có muốn thêm khách hàng nay?", "Confirm", MessageBoxButtons.OKCancel);
+                    if(res == DialogResult.OK)
+                    {
+                        guna2TextBoxName.Text = kh.HoTen;
+                        guna2TextBoxCCCD.Text = kh.CCCD;
+                        guna2TextBoxPhone.Text = kh.DienThoai;
+                        guna2TextBoxEmail.Text = kh.Email;
+                        guna2TextBoxAddress.Text = kh.DiaChi;
+                    }
+
+                }
                 // Ẩn thông báo lỗi nếu không có lỗi
                 label2.Visible = false;
             }
@@ -706,8 +722,6 @@ namespace QLKS
 
         private void btMakeBill_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            button.BackColor = Color.ForestGreen;
 
             KhachHang kh = new KhachHang();
             kh.HoTen = guna2TextBoxName.Text;

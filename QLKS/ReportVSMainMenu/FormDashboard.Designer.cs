@@ -32,6 +32,9 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDashboard));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -40,20 +43,40 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbEndDate = new System.Windows.Forms.Label();
+            this.lbStartDate = new System.Windows.Forms.Label();
             this.chartRoomtype = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.dgvLowServices = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbNumberServices = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbNumberRooms = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbNumberCustomers = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.chartTopServices = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartGrossRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lbTotalProfit = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbTotalRevenue = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbNumberBills = new System.Windows.Forms.Label();
+            this.lbNumberBooking = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btOkCustomDate = new System.Windows.Forms.Button();
             this.btCustomDate = new System.Windows.Forms.Button();
             this.btLast7Days = new System.Windows.Forms.Button();
@@ -63,44 +86,21 @@
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lbNumberBills = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbTotalRevenue = new System.Windows.Forms.Label();
-            this.lbTotalProfit = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lbNumberCustomers = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbNumberRooms = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbNumberServices = new System.Windows.Forms.Label();
-            this.lbStartDate = new System.Windows.Forms.Label();
-            this.lbEndDate = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.lbNumberBooking = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.dgvLowServices = new System.Windows.Forms.DataGridView();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRoomtype)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLowServices)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTopServices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartGrossRevenue)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLowServices)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -131,6 +131,30 @@
             this.guna2Panel1.Size = new System.Drawing.Size(954, 539);
             this.guna2Panel1.TabIndex = 0;
             // 
+            // lbEndDate
+            // 
+            this.lbEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEndDate.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbEndDate.Location = new System.Drawing.Point(271, 16);
+            this.lbEndDate.Name = "lbEndDate";
+            this.lbEndDate.Size = new System.Drawing.Size(106, 20);
+            this.lbEndDate.TabIndex = 16;
+            this.lbEndDate.Text = "04 Jun , 2023";
+            this.lbEndDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbEndDate.Click += new System.EventHandler(this.lbEndDate_Click);
+            // 
+            // lbStartDate
+            // 
+            this.lbStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStartDate.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lbStartDate.Location = new System.Drawing.Point(159, 16);
+            this.lbStartDate.Name = "lbStartDate";
+            this.lbStartDate.Size = new System.Drawing.Size(106, 20);
+            this.lbStartDate.TabIndex = 15;
+            this.lbStartDate.Text = "04 Jun , 2023";
+            this.lbStartDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbStartDate.Click += new System.EventHandler(this.lbStartDate_Click);
+            // 
             // chartRoomtype
             // 
             this.chartRoomtype.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
@@ -139,6 +163,9 @@
             this.chartRoomtype.ChartAreas.Add(chartArea1);
             legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.ForeColor = System.Drawing.Color.White;
+            legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
             this.chartRoomtype.Legends.Add(legend1);
             this.chartRoomtype.Location = new System.Drawing.Point(434, 340);
@@ -177,6 +204,37 @@
             this.panel5.Size = new System.Drawing.Size(267, 186);
             this.panel5.TabIndex = 11;
             // 
+            // dgvLowServices
+            // 
+            this.dgvLowServices.AllowUserToAddRows = false;
+            this.dgvLowServices.AllowUserToDeleteRows = false;
+            this.dgvLowServices.AllowUserToOrderColumns = true;
+            this.dgvLowServices.AllowUserToResizeColumns = false;
+            this.dgvLowServices.AllowUserToResizeRows = false;
+            this.dgvLowServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLowServices.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            this.dgvLowServices.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvLowServices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvLowServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLowServices.ColumnHeadersVisible = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(122)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLowServices.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvLowServices.Location = new System.Drawing.Point(1, 27);
+            this.dgvLowServices.Name = "dgvLowServices";
+            this.dgvLowServices.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvLowServices.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvLowServices.RowTemplate.Height = 30;
+            this.dgvLowServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLowServices.Size = new System.Drawing.Size(266, 156);
+            this.dgvLowServices.TabIndex = 3;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -206,6 +264,108 @@
             this.panel4.Size = new System.Drawing.Size(143, 186);
             this.panel4.TabIndex = 10;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(0, 143);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 14;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 90);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 13;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbNumberServices
+            // 
+            this.lbNumberServices.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbNumberServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumberServices.ForeColor = System.Drawing.Color.White;
+            this.lbNumberServices.Location = new System.Drawing.Point(0, 143);
+            this.lbNumberServices.Name = "lbNumberServices";
+            this.lbNumberServices.Size = new System.Drawing.Size(143, 36);
+            this.lbNumberServices.TabIndex = 12;
+            this.lbNumberServices.Text = "10000";
+            this.lbNumberServices.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Silver;
+            this.label8.Location = new System.Drawing.Point(0, 126);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(143, 17);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "No.Services";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbNumberRooms
+            // 
+            this.lbNumberRooms.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbNumberRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumberRooms.ForeColor = System.Drawing.Color.White;
+            this.lbNumberRooms.Location = new System.Drawing.Point(0, 90);
+            this.lbNumberRooms.Name = "lbNumberRooms";
+            this.lbNumberRooms.Size = new System.Drawing.Size(143, 36);
+            this.lbNumberRooms.TabIndex = 10;
+            this.lbNumberRooms.Text = "10000";
+            this.lbNumberRooms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Silver;
+            this.label6.Location = new System.Drawing.Point(0, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(143, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "No.Rooms";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbNumberCustomers
+            // 
+            this.lbNumberCustomers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbNumberCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumberCustomers.ForeColor = System.Drawing.Color.White;
+            this.lbNumberCustomers.Location = new System.Drawing.Point(0, 37);
+            this.lbNumberCustomers.Name = "lbNumberCustomers";
+            this.lbNumberCustomers.Size = new System.Drawing.Size(143, 36);
+            this.lbNumberCustomers.TabIndex = 8;
+            this.lbNumberCustomers.Text = "10000";
+            this.lbNumberCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Silver;
+            this.label4.Location = new System.Drawing.Point(0, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(143, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "No.Customers";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -226,6 +386,9 @@
             this.chartTopServices.ChartAreas.Add(chartArea2);
             legend2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.ForeColor = System.Drawing.Color.White;
+            legend2.IsTextAutoFit = false;
             legend2.Name = "Legend1";
             this.chartTopServices.Legends.Add(legend2);
             this.chartTopServices.Location = new System.Drawing.Point(679, 100);
@@ -318,6 +481,52 @@
             this.panel3.Size = new System.Drawing.Size(330, 49);
             this.panel3.TabIndex = 11;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(58, 46);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 6;
+            this.pictureBox3.TabStop = false;
+            // 
+            // lbTotalProfit
+            // 
+            this.lbTotalProfit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTotalProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalProfit.ForeColor = System.Drawing.Color.White;
+            this.lbTotalProfit.Location = new System.Drawing.Point(0, 15);
+            this.lbTotalProfit.Name = "lbTotalProfit";
+            this.lbTotalProfit.Size = new System.Drawing.Size(265, 34);
+            this.lbTotalProfit.TabIndex = 5;
+            this.lbTotalProfit.Text = "10000";
+            this.lbTotalProfit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(265, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Total Profit";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(34)))), ((int)(((byte)(249)))));
+            this.label9.Location = new System.Drawing.Point(265, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 49);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "+17%";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
@@ -330,6 +539,53 @@
             this.panel2.Size = new System.Drawing.Size(307, 49);
             this.panel2.TabIndex = 10;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(51, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lbTotalRevenue
+            // 
+            this.lbTotalRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTotalRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalRevenue.ForeColor = System.Drawing.Color.White;
+            this.lbTotalRevenue.Location = new System.Drawing.Point(0, 15);
+            this.lbTotalRevenue.Name = "lbTotalRevenue";
+            this.lbTotalRevenue.Size = new System.Drawing.Size(242, 34);
+            this.lbTotalRevenue.TabIndex = 5;
+            this.lbTotalRevenue.Text = "10000";
+            this.lbTotalRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(242, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Total Revenue";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(202)))), ((int)(((byte)(231)))));
+            this.label7.Location = new System.Drawing.Point(242, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 49);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "+21%";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
@@ -340,6 +596,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(281, 49);
             this.panel1.TabIndex = 9;
+            // 
+            // lbNumberBills
+            // 
+            this.lbNumberBills.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbNumberBills.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumberBills.ForeColor = System.Drawing.Color.Silver;
+            this.lbNumberBills.Location = new System.Drawing.Point(0, 0);
+            this.lbNumberBills.Name = "lbNumberBills";
+            this.lbNumberBills.Size = new System.Drawing.Size(222, 15);
+            this.lbNumberBills.TabIndex = 3;
+            this.lbNumberBills.Text = "Number of Booking";
+            this.lbNumberBills.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbNumberBooking
+            // 
+            this.lbNumberBooking.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lbNumberBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumberBooking.ForeColor = System.Drawing.Color.White;
+            this.lbNumberBooking.Location = new System.Drawing.Point(0, 15);
+            this.lbNumberBooking.Name = "lbNumberBooking";
+            this.lbNumberBooking.Size = new System.Drawing.Size(222, 34);
+            this.lbNumberBooking.TabIndex = 7;
+            this.lbNumberBooking.Text = "10000";
+            this.lbNumberBooking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(62)))), ((int)(((byte)(249)))));
+            this.label1.Location = new System.Drawing.Point(222, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 49);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "+11%";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btOkCustomDate
             // 
@@ -465,292 +757,6 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Dashboard";
             // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(62)))), ((int)(((byte)(249)))));
-            this.label1.Location = new System.Drawing.Point(222, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 49);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "+11%";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(202)))), ((int)(((byte)(231)))));
-            this.label7.Location = new System.Drawing.Point(242, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 49);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "+21%";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(34)))), ((int)(((byte)(249)))));
-            this.label9.Location = new System.Drawing.Point(265, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 49);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "+17%";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbNumberBills
-            // 
-            this.lbNumberBills.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbNumberBills.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumberBills.ForeColor = System.Drawing.Color.Silver;
-            this.lbNumberBills.Location = new System.Drawing.Point(0, 0);
-            this.lbNumberBills.Name = "lbNumberBills";
-            this.lbNumberBills.Size = new System.Drawing.Size(222, 15);
-            this.lbNumberBills.TabIndex = 3;
-            this.lbNumberBills.Text = "Number of Booking";
-            this.lbNumberBills.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Total Revenue";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(265, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Total Profit";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbTotalRevenue
-            // 
-            this.lbTotalRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalRevenue.ForeColor = System.Drawing.Color.White;
-            this.lbTotalRevenue.Location = new System.Drawing.Point(0, 15);
-            this.lbTotalRevenue.Name = "lbTotalRevenue";
-            this.lbTotalRevenue.Size = new System.Drawing.Size(242, 34);
-            this.lbTotalRevenue.TabIndex = 5;
-            this.lbTotalRevenue.Text = "10000";
-            this.lbTotalRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbTotalProfit
-            // 
-            this.lbTotalProfit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTotalProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalProfit.ForeColor = System.Drawing.Color.White;
-            this.lbTotalProfit.Location = new System.Drawing.Point(0, 15);
-            this.lbTotalProfit.Name = "lbTotalProfit";
-            this.lbTotalProfit.Size = new System.Drawing.Size(265, 34);
-            this.lbTotalProfit.TabIndex = 5;
-            this.lbTotalProfit.Text = "10000";
-            this.lbTotalProfit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Silver;
-            this.label4.Location = new System.Drawing.Point(0, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "No.Customers";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbNumberCustomers
-            // 
-            this.lbNumberCustomers.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbNumberCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumberCustomers.ForeColor = System.Drawing.Color.White;
-            this.lbNumberCustomers.Location = new System.Drawing.Point(0, 37);
-            this.lbNumberCustomers.Name = "lbNumberCustomers";
-            this.lbNumberCustomers.Size = new System.Drawing.Size(143, 36);
-            this.lbNumberCustomers.TabIndex = 8;
-            this.lbNumberCustomers.Text = "10000";
-            this.lbNumberCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(0, 73);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 17);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "No.Rooms";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbNumberRooms
-            // 
-            this.lbNumberRooms.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbNumberRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumberRooms.ForeColor = System.Drawing.Color.White;
-            this.lbNumberRooms.Location = new System.Drawing.Point(0, 90);
-            this.lbNumberRooms.Name = "lbNumberRooms";
-            this.lbNumberRooms.Size = new System.Drawing.Size(143, 36);
-            this.lbNumberRooms.TabIndex = 10;
-            this.lbNumberRooms.Text = "10000";
-            this.lbNumberRooms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Silver;
-            this.label8.Location = new System.Drawing.Point(0, 126);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 17);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "No.Services";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbNumberServices
-            // 
-            this.lbNumberServices.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbNumberServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumberServices.ForeColor = System.Drawing.Color.White;
-            this.lbNumberServices.Location = new System.Drawing.Point(0, 143);
-            this.lbNumberServices.Name = "lbNumberServices";
-            this.lbNumberServices.Size = new System.Drawing.Size(143, 36);
-            this.lbNumberServices.TabIndex = 12;
-            this.lbNumberServices.Text = "10000";
-            this.lbNumberServices.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbStartDate
-            // 
-            this.lbStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStartDate.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbStartDate.Location = new System.Drawing.Point(159, 16);
-            this.lbStartDate.Name = "lbStartDate";
-            this.lbStartDate.Size = new System.Drawing.Size(106, 20);
-            this.lbStartDate.TabIndex = 15;
-            this.lbStartDate.Text = "04 Jun , 2023";
-            this.lbStartDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbStartDate.Click += new System.EventHandler(this.lbStartDate_Click);
-            // 
-            // lbEndDate
-            // 
-            this.lbEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndDate.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lbEndDate.Location = new System.Drawing.Point(271, 16);
-            this.lbEndDate.Name = "lbEndDate";
-            this.lbEndDate.Size = new System.Drawing.Size(106, 20);
-            this.lbEndDate.TabIndex = 16;
-            this.lbEndDate.Text = "04 Jun , 2023";
-            this.lbEndDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbEndDate.Click += new System.EventHandler(this.lbEndDate_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 46);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(58, 46);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            // 
-            // lbNumberBooking
-            // 
-            this.lbNumberBooking.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbNumberBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumberBooking.ForeColor = System.Drawing.Color.White;
-            this.lbNumberBooking.Location = new System.Drawing.Point(0, 15);
-            this.lbNumberBooking.Name = "lbNumberBooking";
-            this.lbNumberBooking.Size = new System.Drawing.Size(222, 34);
-            this.lbNumberBooking.TabIndex = 7;
-            this.lbNumberBooking.Text = "10000";
-            this.lbNumberBooking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 90);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(37, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 13;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(0, 143);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(37, 36);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 14;
-            this.pictureBox5.TabStop = false;
-            // 
-            // dgvLowServices
-            // 
-            this.dgvLowServices.AllowUserToAddRows = false;
-            this.dgvLowServices.AllowUserToDeleteRows = false;
-            this.dgvLowServices.AllowUserToOrderColumns = true;
-            this.dgvLowServices.AllowUserToResizeColumns = false;
-            this.dgvLowServices.AllowUserToResizeRows = false;
-            this.dgvLowServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLowServices.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            this.dgvLowServices.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvLowServices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvLowServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLowServices.ColumnHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(122)))), ((int)(((byte)(133)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLowServices.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvLowServices.Location = new System.Drawing.Point(1, 27);
-            this.dgvLowServices.Name = "dgvLowServices";
-            this.dgvLowServices.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvLowServices.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvLowServices.RowTemplate.Height = 30;
-            this.dgvLowServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLowServices.Size = new System.Drawing.Size(266, 156);
-            this.dgvLowServices.TabIndex = 3;
-            // 
             // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -765,18 +771,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartRoomtype)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLowServices)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartTopServices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartGrossRevenue)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLowServices)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

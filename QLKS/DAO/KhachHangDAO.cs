@@ -130,6 +130,18 @@ namespace QLKS.DAO
 
         }
 
+        public bool IsExistsByCCCD(string cccd)
+        {
+            string getkh = "select * from KhachHang where cccd = '" + cccd + "'";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(getkh);
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;// chưa có trong database
+
+        }
+
 
         public int AddKhachHang(KhachHang kh)
         {

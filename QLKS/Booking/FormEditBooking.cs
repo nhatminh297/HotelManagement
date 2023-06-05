@@ -121,11 +121,9 @@ namespace QLKS
             if (result == DialogResult.OK)
             {
                 BillDAO.Instance.PayBill(hoadon.ID, hoadon.Sophong);
-                FormBooking formbooking = Application.OpenForms.OfType<FormBooking>().FirstOrDefault();
-                if (formbooking != null)
-                {
-                    formbooking.ShowBills();
-                }
+                FormMainMenu formmainmenu = Application.OpenForms.OfType<FormMainMenu>().FirstOrDefault();
+                formmainmenu.OpenChildForm(new FormBooking(formmainmenu.Id1));
+
                 FormBill newForm = new FormBill(hoadon.ID);
                 newForm.ShowDialog();
             }
@@ -334,8 +332,6 @@ namespace QLKS
             {
                 SvBillDAO.Instance.AddSvBill(svBill);
             }
-
-            DialogResult result = MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK);
 
         }
 

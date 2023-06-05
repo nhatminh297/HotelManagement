@@ -145,5 +145,10 @@ namespace QLKS
             button.FillColor = Color.FromArgb(40, 40, 80);
             button.ForeColor = Color.FromArgb(94, 148, 255);
         }
+
+        private void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+             
+        }
     }
 }

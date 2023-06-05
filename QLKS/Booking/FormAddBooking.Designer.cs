@@ -141,7 +141,6 @@
             // 
             // guna2ButtonDelete
             // 
-            this.guna2ButtonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2ButtonDelete.BorderColor = System.Drawing.Color.Firebrick;
             this.guna2ButtonDelete.BorderRadius = 5;
             this.guna2ButtonDelete.BorderThickness = 2;
@@ -175,7 +174,6 @@
             // 
             // tbPrices
             // 
-            this.tbPrices.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbPrices.BorderRadius = 5;
             this.tbPrices.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbPrices.DefaultText = "";
@@ -199,7 +197,6 @@
             // 
             // btMakeBill
             // 
-            this.btMakeBill.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btMakeBill.BorderColor = System.Drawing.Color.ForestGreen;
             this.btMakeBill.BorderRadius = 5;
             this.btMakeBill.BorderThickness = 2;
@@ -221,7 +218,6 @@
             // 
             // guna2HtmlLabel1
             // 
-            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -73,6 +73,16 @@ namespace QLKS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gross {
+            get {
+                object obj = ResourceManager.GetObject("gross", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hotel {
             get {
                 object obj = ResourceManager.GetObject("Hotel", resourceCulture);
@@ -227,6 +237,16 @@ namespace QLKS.Properties {
         internal static System.Drawing.Bitmap pngtree_user_icon_png_image_1796659 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-user-icon-png-image_1796659", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap revenue__1_ {
+            get {
+                object obj = ResourceManager.GetObject("revenue (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

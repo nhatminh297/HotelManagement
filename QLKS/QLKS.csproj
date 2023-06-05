@@ -357,6 +357,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\revenue %281%29.png" />
+    <None Include="Resources\gross.png" />
     <None Include="Resources\logoo-removebg-preview %281%29.jpg" />
   </ItemGroup>
   <ItemGroup />

@@ -63,7 +63,7 @@ namespace QLKS.FormManager
                 DisableButton();
                 //Button
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(40, 40, 80);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -233,7 +233,7 @@ namespace QLKS.FormManager
 
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
-            if (Role == "Staff")
+            if (Role != "Admin")
             {
                 btAccounts.Visible = false;
                 btReport.Visible = false;

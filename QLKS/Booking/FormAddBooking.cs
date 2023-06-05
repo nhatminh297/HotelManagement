@@ -722,7 +722,7 @@ namespace QLKS
 
         private void btMakeBill_Click(object sender, EventArgs e)
         {
-
+            btMakeBill.Focus();
             KhachHang kh = new KhachHang();
             kh.HoTen = guna2TextBoxName.Text;
             kh.CCCD = guna2TextBoxCCCD.Text;
@@ -803,7 +803,8 @@ namespace QLKS
             DialogResult result = MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
             if (result == DialogResult.OK)
             {
-                load();
+                FormMainMenu formmainmenu = Application.OpenForms.OfType<FormMainMenu>().FirstOrDefault();
+                formmainmenu.OpenChildForm(new FormBooking(formmainmenu.Id1));
             }
 
         }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using QLKS.DTO;
 using QLKS.DAO;
+using FontAwesome.Sharp;
 
 namespace QLKS
 {
@@ -33,6 +34,7 @@ namespace QLKS
 
         public void loadBill(int mahd)
         {
+            iconButton1.Focus();
             Bill hoadon = BillDAO.Instance.GetHoaDonByID(mahd);
             string tenkh = KhachHangDAO.Instance.GetNameFromID(hoadon.Makh);
             tbCustomerName.Text = tenkh;

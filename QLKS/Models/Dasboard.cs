@@ -72,9 +72,9 @@ namespace QLKS.Models
             GrossRevenueList = new List<RevenueByDate>();
             TotalProfit = 0;
             TotalRevenue = 0;
-            string query = "select checkin , sum(prices) as total from HoaDon " +
-                                "where Checkout between  @fromDate and @toDate " +
-                                "group by checkin";
+            string query = "select checkout , sum(prices) as total from HoaDon " +
+                                "where checkout between  @fromDate and @toDate " +
+                                "group by checkout";
             DataTable datatable = DataProvider.Instance.ExecuteQuery( query, new object[] { startDate, endDate });
             var resultTable = new List<KeyValuePair<DateTime, decimal>>();
             foreach(DataRow row in datatable.Rows)

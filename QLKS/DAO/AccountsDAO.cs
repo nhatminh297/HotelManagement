@@ -115,5 +115,16 @@ namespace QLKS.DAO
             return rowaffect;
         }
 
+        public bool IsExistsUsername(string username)
+        {
+            string query = "select * from nhanvien where username = '" + username+"'";
+            int rowaffect = DataProvider.Instance.ExecuteNonQuery(query);
+            if (rowaffect == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
     }
 }

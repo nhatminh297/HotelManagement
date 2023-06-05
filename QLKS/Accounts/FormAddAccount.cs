@@ -140,8 +140,15 @@ namespace QLKS.FormManager
 
         private void btAddAccount_Click(object sender, EventArgs e)
         {
-
+            
             Accounts acc = new Accounts();
+            acc.Username = tbUsername.Text;
+            if (AccountsDAO.Instance.IsExistsUsername(acc.Username))
+            {
+                MessageBox.Show("Username đã tồn tại");
+                return;
+            }
+
             acc.Password = tbPassword.Text;
             if (!checkPassword(acc.Password))
             {
@@ -153,7 +160,6 @@ namespace QLKS.FormManager
             string ngaysinh = guna2DateTimePicker1.Text;
             acc.DiaChi = tbAddress.Text;
             acc.Role = cbRole.Text;
-            acc.Username = tbUsername.Text;
 
             if(AccountsDAO.Instance.AddAccounts(acc) != 0)
             {

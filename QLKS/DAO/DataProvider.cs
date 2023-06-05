@@ -28,7 +28,7 @@ namespace QLKS.DAO
         }
         private DataProvider(){ }
 
-        private static string _connectionString = @"Data Source=DESKTOP-NHATMIN\SQLEXPRESS02;AttachDbFilename=C:\Workspaces\Projects\HotelManagement\QLKS\Database1.mdf;Integrated Security=True";
+        private static string _connectionString = @"Data Source=DESKTOP-NHATMIN\SQLEXPRESS02;AttachDbFilename=C:\Workspaces\testhaotelmanagement\QLKS\Database1.mdf;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

@@ -176,7 +176,7 @@ namespace QLKS.Models
                     " where hd.ID = svbill.mahd" +
                     " group by TenDV " +
                     " order by sl asc";
-            count = 6;
+            count = 5;
             DataTable datatable2 = DataProvider.Instance.ExecuteQuery(query, new object[] {count});
             foreach (DataRow row in datatable2.Rows)
             {

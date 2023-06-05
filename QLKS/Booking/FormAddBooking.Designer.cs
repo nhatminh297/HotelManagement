@@ -54,6 +54,12 @@
             this.guna2TextBoxName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.gvAddedServices = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.iddv2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sophong3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tendv2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loaidv2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giadv2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gvAddedRooms = new Guna.UI2.WinForms.Guna2DataGridView();
             this.sophong2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaiphong2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,12 +99,6 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iddv2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sophong3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tendv2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loaidv2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giadv2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvAddedServices)).BeginInit();
@@ -122,7 +122,7 @@
             this.tbFormName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbFormName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbFormName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbFormName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            this.tbFormName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.tbFormName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbFormName.Font = new System.Drawing.Font("Baskerville Old Face", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFormName.ForeColor = System.Drawing.Color.Turquoise;
@@ -138,25 +138,28 @@
             this.tbFormName.TabIndex = 1;
             this.tbFormName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbFormName.WordWrap = false;
-            this.tbFormName.TextChanged += new System.EventHandler(this.tbFormName_TextChanged);
             // 
             // guna2ButtonDelete
             // 
             this.guna2ButtonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2ButtonDelete.BorderColor = System.Drawing.Color.Firebrick;
             this.guna2ButtonDelete.BorderRadius = 5;
+            this.guna2ButtonDelete.BorderThickness = 2;
             this.guna2ButtonDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButtonDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2ButtonDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2ButtonDelete.DisabledState.FillColor = System.Drawing.Color.DarkGray;
             this.guna2ButtonDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2ButtonDelete.FillColor = System.Drawing.Color.Firebrick;
+            this.guna2ButtonDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.guna2ButtonDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ButtonDelete.ForeColor = System.Drawing.Color.White;
+            this.guna2ButtonDelete.ForeColor = System.Drawing.Color.Firebrick;
             this.guna2ButtonDelete.Location = new System.Drawing.Point(730, 15);
             this.guna2ButtonDelete.Name = "guna2ButtonDelete";
             this.guna2ButtonDelete.Size = new System.Drawing.Size(126, 38);
             this.guna2ButtonDelete.TabIndex = 10;
             this.guna2ButtonDelete.Text = "Cancle";
             this.guna2ButtonDelete.Click += new System.EventHandler(this.guna2ButtonDelete_Click);
+            this.guna2ButtonDelete.MouseEnter += new System.EventHandler(this.guna2ButtonDelete_MouseHover);
+            this.guna2ButtonDelete.MouseLeave += new System.EventHandler(this.guna2ButtonDelete_MouseLeave);
             // 
             // panel2
             // 
@@ -197,20 +200,24 @@
             // btMakeBill
             // 
             this.btMakeBill.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btMakeBill.BorderColor = System.Drawing.Color.ForestGreen;
             this.btMakeBill.BorderRadius = 5;
+            this.btMakeBill.BorderThickness = 2;
             this.btMakeBill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btMakeBill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btMakeBill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btMakeBill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btMakeBill.FillColor = System.Drawing.Color.ForestGreen;
+            this.btMakeBill.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.btMakeBill.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMakeBill.ForeColor = System.Drawing.Color.White;
+            this.btMakeBill.ForeColor = System.Drawing.Color.ForestGreen;
             this.btMakeBill.Location = new System.Drawing.Point(575, 15);
             this.btMakeBill.Name = "btMakeBill";
             this.btMakeBill.Size = new System.Drawing.Size(126, 38);
             this.btMakeBill.TabIndex = 8;
             this.btMakeBill.Text = "Add";
             this.btMakeBill.Click += new System.EventHandler(this.btMakeBill_Click);
+            this.btMakeBill.MouseEnter += new System.EventHandler(this.btMakeBill_MouseEnter);
+            this.btMakeBill.MouseLeave += new System.EventHandler(this.btMakeBill_MouseLeave);
             // 
             // guna2HtmlLabel1
             // 
@@ -399,6 +406,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gvAddedServices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvAddedServices.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gvAddedServices.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvAddedServices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -437,7 +445,7 @@
             this.gvAddedServices.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.gvAddedServices.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.gvAddedServices.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gvAddedServices.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gvAddedServices.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvAddedServices.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvAddedServices.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gvAddedServices.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -454,9 +462,55 @@
             this.gvAddedServices.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvAddedServices.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.gvAddedServices.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvAddedServices_CellDoubleClick);
-            this.gvAddedServices.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvAddedServices_CellEndEdit);
+            this.gvAddedServices.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvAddedServices_CellLeave);
             this.gvAddedServices.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gvAddedServices_EditingControlShowing);
             this.gvAddedServices.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gvAddedServices_KeyPress);
+            // 
+            // iddv2
+            // 
+            this.iddv2.HeaderText = "iddv2";
+            this.iddv2.Name = "iddv2";
+            this.iddv2.ReadOnly = true;
+            this.iddv2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.iddv2.Visible = false;
+            // 
+            // sophong3
+            // 
+            this.sophong3.HeaderText = "sophong3";
+            this.sophong3.Name = "sophong3";
+            this.sophong3.ReadOnly = true;
+            this.sophong3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.sophong3.Visible = false;
+            // 
+            // tendv2
+            // 
+            this.tendv2.FillWeight = 200F;
+            this.tendv2.HeaderText = "Sevices";
+            this.tendv2.Name = "tendv2";
+            this.tendv2.ReadOnly = true;
+            this.tendv2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // loaidv2
+            // 
+            this.loaidv2.FillWeight = 70F;
+            this.loaidv2.HeaderText = "Type";
+            this.loaidv2.Name = "loaidv2";
+            this.loaidv2.ReadOnly = true;
+            this.loaidv2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // SL
+            // 
+            this.SL.FillWeight = 30F;
+            this.SL.HeaderText = "SL";
+            this.SL.Name = "SL";
+            this.SL.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // giadv2
+            // 
+            this.giadv2.HeaderText = "Prices";
+            this.giadv2.Name = "giadv2";
+            this.giadv2.ReadOnly = true;
+            this.giadv2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // gvAddedRooms
             // 
@@ -467,6 +521,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.gvAddedRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gvAddedRooms.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gvAddedRooms.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvAddedRooms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -507,7 +562,7 @@
             this.gvAddedRooms.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.gvAddedRooms.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.gvAddedRooms.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gvAddedRooms.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gvAddedRooms.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvAddedRooms.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvAddedRooms.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gvAddedRooms.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -690,6 +745,7 @@
             this.gvServices.AllowUserToResizeRows = false;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             this.gvServices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.gvServices.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvServices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -727,7 +783,7 @@
             this.gvServices.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.gvServices.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.gvServices.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gvServices.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gvServices.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvServices.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvServices.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gvServices.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -805,6 +861,7 @@
             this.gvRooms.AllowUserToResizeRows = false;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
             this.gvRooms.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.gvRooms.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvRooms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -845,7 +902,7 @@
             this.gvRooms.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.gvRooms.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.gvRooms.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gvRooms.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gvRooms.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvRooms.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvRooms.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gvRooms.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -1010,7 +1067,9 @@
             this.guna2DateEnd.BorderRadius = 5;
             this.guna2DateEnd.Checked = true;
             this.guna2DateEnd.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.guna2DateEnd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.guna2DateEnd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateEnd.ForeColor = System.Drawing.Color.Black;
             this.guna2DateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.guna2DateEnd.Location = new System.Drawing.Point(353, 7);
             this.guna2DateEnd.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -1022,6 +1081,8 @@
             this.guna2DateEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2DateEnd.Value = new System.DateTime(2023, 5, 19, 19, 37, 27, 693);
             this.guna2DateEnd.ValueChanged += new System.EventHandler(this.Guna2DateEnd_ValueChanged);
+            this.guna2DateEnd.MouseEnter += new System.EventHandler(this.guna2DateEnd_MouseEnter);
+            this.guna2DateEnd.MouseLeave += new System.EventHandler(this.guna2DateEnd_MouseLeave);
             // 
             // guna2DateStart
             // 
@@ -1029,7 +1090,9 @@
             this.guna2DateStart.BorderRadius = 5;
             this.guna2DateStart.Checked = true;
             this.guna2DateStart.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.guna2DateStart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.guna2DateStart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateStart.ForeColor = System.Drawing.Color.Black;
             this.guna2DateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.guna2DateStart.Location = new System.Drawing.Point(185, 7);
             this.guna2DateStart.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -1041,6 +1104,8 @@
             this.guna2DateStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2DateStart.Value = new System.DateTime(2023, 6, 1, 20, 56, 0, 0);
             this.guna2DateStart.ValueChanged += new System.EventHandler(this.guna2DateStart_ValueChanged);
+            this.guna2DateStart.MouseEnter += new System.EventHandler(this.guna2DateEnd_MouseEnter);
+            this.guna2DateStart.MouseLeave += new System.EventHandler(this.guna2DateEnd_MouseLeave);
             // 
             // guna2Panel1
             // 
@@ -1082,52 +1147,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(954, 539);
             this.panel1.TabIndex = 1;
-            // 
-            // iddv2
-            // 
-            this.iddv2.HeaderText = "iddv2";
-            this.iddv2.Name = "iddv2";
-            this.iddv2.ReadOnly = true;
-            this.iddv2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.iddv2.Visible = false;
-            // 
-            // sophong3
-            // 
-            this.sophong3.HeaderText = "sophong3";
-            this.sophong3.Name = "sophong3";
-            this.sophong3.ReadOnly = true;
-            this.sophong3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.sophong3.Visible = false;
-            // 
-            // tendv2
-            // 
-            this.tendv2.FillWeight = 200F;
-            this.tendv2.HeaderText = "Sevices";
-            this.tendv2.Name = "tendv2";
-            this.tendv2.ReadOnly = true;
-            this.tendv2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // loaidv2
-            // 
-            this.loaidv2.FillWeight = 70F;
-            this.loaidv2.HeaderText = "Type";
-            this.loaidv2.Name = "loaidv2";
-            this.loaidv2.ReadOnly = true;
-            this.loaidv2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // SL
-            // 
-            this.SL.FillWeight = 30F;
-            this.SL.HeaderText = "SL";
-            this.SL.Name = "SL";
-            this.SL.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // giadv2
-            // 
-            this.giadv2.HeaderText = "Prices";
-            this.giadv2.Name = "giadv2";
-            this.giadv2.ReadOnly = true;
-            this.giadv2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // FormAddBooking
             // 

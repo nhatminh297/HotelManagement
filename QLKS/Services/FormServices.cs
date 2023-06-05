@@ -22,6 +22,67 @@ namespace QLKS
             loadServices();
         }
 
+        #region color button
+
+        private void btSearch_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(94, 148, 255);
+            button.ForeColor = Color.White;
+        }
+
+        private void btSearch_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(50, 50, 90);
+            button.ForeColor = Color.FromArgb(94, 148, 255);
+        }
+
+        private void btMakeBill_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.ForestGreen;
+            button.ForeColor = Color.White;
+        }
+
+        private void btMakeBill_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(50, 50, 90);
+            button.ForeColor = Color.ForestGreen;
+        }
+
+        private void btEdit_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.Orange;
+            button.ForeColor = Color.White;
+        }
+
+        private void btEdit_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(50, 50, 90);
+            button.ForeColor = Color.Orange;
+        }
+
+        private void guna2ButtonDelete_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.Firebrick;
+            button.ForeColor = Color.White;
+        }
+
+        private void guna2ButtonDelete_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(50, 50, 90);
+            button.ForeColor = Color.Firebrick;
+        }
+
+        #endregion
+
+
         private void btAdd_Click(object sender, EventArgs e)
         {
             FormAddServices formAddServices = new FormAddServices();
@@ -131,6 +192,70 @@ namespace QLKS
             {
                 DataGridViewRow row = DVToRow(dv);
                 guna2DataGridView1.Rows.Add(row);
+            }
+        }
+
+        public void Search()
+        {
+            string searchText = tbSvName.Text.ToLower(); // Lấy giá trị trong TextBox và chuyển thành chữ thường
+            string type = guna2ComboBoxtype.Text.ToLower();
+
+            if (type != "Services Type".ToLower())
+                foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+                {
+                    // Kiểm tra giá trị trong cột tương ứng với dòng hiện tại
+                    if (row.Cells["colName"].Value != null && row.Cells["colName"].Value.ToString().ToLower().Contains(searchText)
+                        && row.Cells["colType"].Value != null && row.Cells["colType"].Value.ToString().ToLower().Contains(type))
+                    {
+                        row.Visible = true; // Hiển thị dòng nếu giá trị phù hợp
+                    }
+                    else
+                    {
+                        row.Visible = false; // Ẩn dòng nếu giá trị không phù hợp
+                    }
+                }
+            else
+            {
+                foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+                {
+                    // Kiểm tra giá trị trong cột tương ứng với dòng hiện tại
+                    if (row.Cells["colName"].Value != null && row.Cells["colName"].Value.ToString().ToLower().Contains(searchText))
+                    {
+                        row.Visible = true; // Hiển thị dòng nếu giá trị phù hợp
+                    }
+                    else
+                    {
+                        row.Visible = false; // Ẩn dòng nếu giá trị không phù hợp
+                    }
+                }
+            }
+
+            // Thoát khỏi TextBox sau khi thực hiện tìm kiếm
+            guna2DataGridView1.Focus();
+        }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void tbSvName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                Search();
+            }
+        }
+
+        private void guna2ComboBoxtype_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                Search();
             }
         }
     }

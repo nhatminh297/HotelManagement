@@ -25,9 +25,53 @@ namespace QLKS.FormManager
             LoadAccount();
         }
 
+        #region button ui
 
-        
-        
+        private void btSearch_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(94, 148, 255);
+            button.ForeColor = Color.White;
+        }
+
+        private void btSearch_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(50, 50, 90);
+            button.ForeColor = Color.FromArgb(94, 148, 255);
+        }
+
+        private void btEdit_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.Orange;
+            button.ForeColor = Color.White;
+        }
+
+        private void btEdit_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(50, 50, 90);
+            button.ForeColor = Color.Orange;
+        }
+
+        private void guna2ButtonDelete_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.Firebrick;
+            button.ForeColor = Color.White;
+        }
+
+        private void guna2ButtonDelete_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(50, 50, 90);
+            button.ForeColor = Color.Firebrick;
+        }
+
+        #endregion
+
+
         public DataGridViewRow AccountToRow(Accounts acc)
         {
             DataGridViewRow row = new DataGridViewRow();
@@ -112,6 +156,37 @@ namespace QLKS.FormManager
                     MessageBox.Show("Không thể xóa tài khoản đang sử dụng.", "Ignore", MessageBoxButtons.OK);
                     return;
                 }
+            }
+        }
+
+        public void Search()
+        {
+            string searchText = tbsearchacc.Text.ToLower(); // Lấy giá trị trong TextBox và chuyển thành chữ thường
+
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+            {
+                // Kiểm tra giá trị trong cột tương ứng với dòng hiện tại
+                if (row.Cells["colHoten"].Value != null && row.Cells["colHoten"].Value.ToString().ToLower().Contains(searchText))
+                {
+                    row.Visible = true; // Hiển thị dòng nếu giá trị phù hợp
+                }
+                else
+                {
+                    row.Visible = false; // Ẩn dòng nếu giá trị không phù hợp
+                }
+            }
+
+            // Thoát khỏi TextBox sau khi thực hiện tìm kiếm
+            guna2DataGridView1.Focus();
+        }
+
+        private void tbsearchacc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                Search();
             }
         }
     }

@@ -348,24 +348,6 @@ namespace QLKS
 
         }
 
-        private void gvAddedServices_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (!isCellEmpty)
-            {
-                DataGridViewRow row = gvAddedServices.Rows[e.RowIndex];
-                SvBill svBill = AddedSvToSvBill(row);
-                SvBill Item = lstsvBills.FirstOrDefault(item => item.Tendv == svBill.Tendv);
-                int old = Item.Soluong;
-                Item.Soluong = svBill.Soluong;
-                Item.Prices = Item.Dongia * Item.Soluong;
-                gvAddedServices.Rows[e.RowIndex].Cells["total"].Value = Item.Prices;
-                decimal delta = Item.Dongia * (Item.Soluong - old);
-                totalSvBill += delta;
-                hoadon.Prices += delta;
-                tbPrices.Text = hoadon.Prices.ToString("N2");
-            }
-        }
-
         private void gvAddedServices_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (gvAddedServices.CurrentCell.ColumnIndex == SL.Index)
@@ -486,6 +468,81 @@ namespace QLKS
             {
                 label3.Visible = false;
             }
+        }
+
+        private void gvAddedServices_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!isCellEmpty)
+            {
+                DataGridViewRow row = gvAddedServices.Rows[e.RowIndex];
+                //if (row.Cells["SL"].Value)
+                SvBill svBill = AddedSvToSvBill(row);
+                SvBill Item = lstsvBills.FirstOrDefault(item => item.Tendv == svBill.Tendv);
+                int old = Item.Soluong;
+                Item.Soluong = svBill.Soluong;
+                Item.Prices = Item.Dongia * Item.Soluong;
+                gvAddedServices.Rows[e.RowIndex].Cells["total"].Value = Item.Prices;
+                decimal delta = Item.Dongia * (Item.Soluong - old);
+                totalSvBill += delta;
+                hoadon.Prices += delta;
+                tbPrices.Text = hoadon.Prices.ToString("N2");
+            }
+        }
+
+        private void btMakeBill_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.ForestGreen;
+            button.ForeColor = Color.White;
+        }
+
+        private void btMakeBill_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(40, 40, 80);
+            button.ForeColor = Color.ForestGreen;
+        }
+
+        private void btEdit_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.DarkGoldenrod;
+            button.ForeColor = Color.White;
+        }
+
+        private void btEdit_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(40, 40, 80);
+            button.ForeColor = Color.DarkGoldenrod;
+        }
+
+        private void guna2ButtonDelete_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.Firebrick;
+            button.ForeColor = Color.White;
+        }
+
+        private void guna2ButtonDelete_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(40, 40, 80);
+            button.ForeColor = Color.Firebrick;
+        }
+
+        private void guna2DateStart_MouseEnter(object sender, EventArgs e)
+        {
+            var dtp = (Guna2DateTimePicker)sender;
+            dtp.FillColor = Color.FromArgb(80, 80, 200);
+            dtp.ForeColor = Color.White;
+        }
+
+        private void guna2DateStart_MouseLeave(object sender, EventArgs e)
+        {
+            var dtp = (Guna2DateTimePicker)sender;
+            dtp.FillColor = Color.FromArgb(60, 60, 100);
+            dtp.ForeColor = Color.Black;
         }
     }
 }

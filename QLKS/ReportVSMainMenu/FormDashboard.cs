@@ -161,6 +161,7 @@ namespace QLKS.ReportVSMainMenu
         {
             lbStartDate.Text = dtpStartDate.Text;
             lbEndDate.Text = dtpEndDate.Text;
+            dgvLowServices.Columns[1].Width  = 50;
         }
     }
 }

@@ -64,7 +64,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(904, 489);
+            this.guna2Panel1.Size = new System.Drawing.Size(954, 539);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2HtmlLabel1
@@ -72,7 +72,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Baskerville Old Face", 20F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Turquoise;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(53, 47);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(35, 35);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(235, 33);
             this.guna2HtmlLabel1.TabIndex = 14;
@@ -80,57 +80,66 @@
             // 
             // guna2ButtonDelete
             // 
-            this.guna2ButtonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2ButtonDelete.BorderColor = System.Drawing.Color.Firebrick;
             this.guna2ButtonDelete.BorderRadius = 5;
+            this.guna2ButtonDelete.BorderThickness = 2;
             this.guna2ButtonDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButtonDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButtonDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2ButtonDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2ButtonDelete.FillColor = System.Drawing.Color.Firebrick;
+            this.guna2ButtonDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.guna2ButtonDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ButtonDelete.ForeColor = System.Drawing.Color.White;
-            this.guna2ButtonDelete.Location = new System.Drawing.Point(778, 402);
+            this.guna2ButtonDelete.ForeColor = System.Drawing.Color.Firebrick;
+            this.guna2ButtonDelete.Location = new System.Drawing.Point(812, 464);
             this.guna2ButtonDelete.Name = "guna2ButtonDelete";
             this.guna2ButtonDelete.Size = new System.Drawing.Size(87, 38);
             this.guna2ButtonDelete.TabIndex = 12;
             this.guna2ButtonDelete.Text = "DELETE";
             this.guna2ButtonDelete.Click += new System.EventHandler(this.guna2ButtonDelete_Click);
+            this.guna2ButtonDelete.MouseEnter += new System.EventHandler(this.guna2ButtonDelete_MouseEnter);
+            this.guna2ButtonDelete.MouseLeave += new System.EventHandler(this.guna2ButtonDelete_MouseLeave);
             // 
             // guna2ButtonEdit
             // 
-            this.guna2ButtonEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2ButtonEdit.BorderColor = System.Drawing.Color.Orange;
             this.guna2ButtonEdit.BorderRadius = 5;
+            this.guna2ButtonEdit.BorderThickness = 2;
             this.guna2ButtonEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButtonEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButtonEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2ButtonEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2ButtonEdit.FillColor = System.Drawing.Color.Orange;
+            this.guna2ButtonEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.guna2ButtonEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ButtonEdit.ForeColor = System.Drawing.Color.White;
-            this.guna2ButtonEdit.Location = new System.Drawing.Point(652, 402);
+            this.guna2ButtonEdit.ForeColor = System.Drawing.Color.Orange;
+            this.guna2ButtonEdit.Location = new System.Drawing.Point(686, 464);
             this.guna2ButtonEdit.Name = "guna2ButtonEdit";
             this.guna2ButtonEdit.Size = new System.Drawing.Size(87, 38);
             this.guna2ButtonEdit.TabIndex = 11;
             this.guna2ButtonEdit.Text = "EDIT";
             this.guna2ButtonEdit.Click += new System.EventHandler(this.guna2ButtonEdit_Click);
+            this.guna2ButtonEdit.MouseEnter += new System.EventHandler(this.btEdit_MouseEnter);
+            this.guna2ButtonEdit.MouseLeave += new System.EventHandler(this.btEdit_MouseLeave);
             // 
             // btAdd
             // 
-            this.btAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btAdd.BorderColor = System.Drawing.Color.ForestGreen;
             this.btAdd.BorderRadius = 5;
+            this.btAdd.BorderThickness = 2;
             this.btAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btAdd.FillColor = System.Drawing.Color.ForestGreen;
+            this.btAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.btAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.ForeColor = System.Drawing.Color.White;
-            this.btAdd.Location = new System.Drawing.Point(526, 402);
+            this.btAdd.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btAdd.Location = new System.Drawing.Point(560, 464);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(87, 38);
             this.btAdd.TabIndex = 10;
             this.btAdd.Text = "ADD";
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            this.btAdd.MouseEnter += new System.EventHandler(this.btMakeBill_MouseEnter);
+            this.btAdd.MouseLeave += new System.EventHandler(this.btSearch_MouseLeave);
             // 
             // guna2DataGridView1
             // 
@@ -141,7 +150,7 @@
             this.guna2DataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.guna2DataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -175,14 +184,14 @@
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(747, 263);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(819, 330);
             this.guna2DataGridView1.TabIndex = 8;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -250,26 +259,30 @@
             // 
             // btSearch
             // 
-            this.btSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btSearch.BorderRadius = 5;
+            this.btSearch.BorderThickness = 2;
             this.btSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.btSearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSearch.ForeColor = System.Drawing.Color.White;
-            this.btSearch.Location = new System.Drawing.Point(740, 44);
+            this.btSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btSearch.Location = new System.Drawing.Point(796, 66);
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(103, 36);
             this.btSearch.TabIndex = 7;
             this.btSearch.Text = "Search";
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
+            this.btSearch.MouseEnter += new System.EventHandler(this.btSearch_MouseEnter);
+            this.btSearch.MouseLeave += new System.EventHandler(this.btSearch_MouseLeave);
             // 
             // tbSearchRoom
             // 
-            this.tbSearchRoom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbSearchRoom.BorderRadius = 5;
             this.tbSearchRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSearchRoom.DefaultText = "Room number";
+            this.tbSearchRoom.DefaultText = "";
             this.tbSearchRoom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tbSearchRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tbSearchRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -278,22 +291,23 @@
             this.tbSearchRoom.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearchRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSearchRoom.IconLeft = ((System.Drawing.Image)(resources.GetObject("tbSearchRoom.IconLeft")));
-            this.tbSearchRoom.Location = new System.Drawing.Point(420, 44);
+            this.tbSearchRoom.Location = new System.Drawing.Point(483, 66);
             this.tbSearchRoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbSearchRoom.Name = "tbSearchRoom";
             this.tbSearchRoom.PasswordChar = '\0';
-            this.tbSearchRoom.PlaceholderText = "";
+            this.tbSearchRoom.PlaceholderText = "Room number";
             this.tbSearchRoom.SelectedText = "";
             this.tbSearchRoom.Size = new System.Drawing.Size(312, 36);
             this.tbSearchRoom.TabIndex = 6;
             this.tbSearchRoom.Enter += new System.EventHandler(this.tbSearchRoom_Enter);
+            this.tbSearchRoom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearchRoom_KeyDown);
             this.tbSearchRoom.Leave += new System.EventHandler(this.tbSearchRoom_Leave);
             // 
             // FormRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 489);
+            this.ClientSize = new System.Drawing.Size(954, 539);
             this.Controls.Add(this.guna2Panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormRoom";

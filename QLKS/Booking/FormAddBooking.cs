@@ -189,6 +189,48 @@ namespace QLKS
             }
         }
 
+        private void guna2DateEnd_MouseEnter(object sender, EventArgs e)
+        {
+            var dtp = (Guna2DateTimePicker)sender;
+            dtp.FillColor = Color.FromArgb(80, 80, 200);
+            dtp.ForeColor = Color.White;
+        }
+
+        private void guna2DateEnd_MouseLeave(object sender, EventArgs e)
+        {
+            var dtp = (Guna2DateTimePicker)sender;
+            dtp.FillColor = Color.FromArgb(60, 60, 100);
+            dtp.ForeColor = Color.Black;
+        }
+
+        private void guna2ButtonDelete_MouseHover(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.Firebrick;
+            button.ForeColor = Color.White;
+        }
+
+        private void guna2ButtonDelete_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(50, 50, 90);
+            button.ForeColor = Color.Firebrick;
+        }
+
+        private void btMakeBill_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.ForestGreen;
+            button.ForeColor = Color.White;
+        }
+
+        private void btMakeBill_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(50,50,90);
+            button.ForeColor = Color.ForestGreen;
+        }
+
         private void guna2ButtonDelete_Click(object sender, EventArgs e)
         {
             FormMainMenu formmainmenu = Application.OpenForms.OfType<FormMainMenu>().FirstOrDefault();
@@ -446,8 +488,6 @@ namespace QLKS
             tbPrices.Text = prices.Price.ToString("N2");
         }
 
-       
-
         private void gvServices_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (gvAddedRooms.SelectedRows.Count == 0)
@@ -546,44 +586,7 @@ namespace QLKS
         private void gvAddedServices_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.ColumnIndex == SL.Index) // Kiểm tra chỉ khi kết thúc chỉnh sửa cột số lượng
-            {
-                DataGridViewCell cell = gvAddedServices.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                if (cell.Value != null)
-                {
-                    int quantity;
-                    if (int.TryParse(cell.Value.ToString(), out quantity))
-                    {
-                        // Thực hiện các thay đổi trong giá trị prices dựa trên giá trị số lượng mới
-                        int rowIndex = e.RowIndex; // Vị trí dòng được chỉnh sửa
-                        DataGridViewRow editedRow = gvAddedServices.Rows[rowIndex];
-                        int count = int.Parse(editedRow.Cells["SL"].Value.ToString());
-                        int sophong = int.Parse(editedRow.Cells["sophong3"].Value.ToString());
-                        int id = int.Parse(editedRow.Cells["iddv2"].Value.ToString());
-                        int oldcount = 0;
-                        // Cập nhật giá trị prices tương ứng
-                        SelectedServices selectedServices = lstSelectedSV.Find(x => x.IdService == id && x.SoPhong == sophong);
-                        TotalPrices totalPrices = lstTotalPrices.Find(x => x.SoPhong == sophong);
-                        if (selectedServices != null)
-                        {
-                            // Cập nhật giá trị của object
-                            oldcount = selectedServices.Count;
-                            selectedServices.Count = count;
-                            selectedServices.TotalPrices = selectedServices.Prices * (decimal)count;
-                        }
-                        // Hiển thị giá trị prices lên TextBox hoặc nơi khác
-                        totalPrices.Price += (selectedServices.Prices * (count - oldcount));
-                        tbPrices.Text = totalPrices.Price.ToString("N2");
-                    }
-                    else
-                    {
-                        // Nếu giá trị không hợp lệ (không phải số nguyên), xử lý tại đây
-                        // Ví dụ: Hiển thị thông báo lỗi cho người dùng
-                        MessageBox.Show("Vui lòng nhập số nguyên vào ô số lượng.");
-                        // Hoặc có thể thiết lập giá trị mặc định hoặc xử lý khác tùy theo yêu cầu
-                    }
-                }
-            }
+
         }
 
         private void gvAddedServices_KeyPress(object sender, KeyPressEventArgs e)
@@ -686,7 +689,6 @@ namespace QLKS
             }
         }
 
-        
         public int checkNotValidSoGio(List<KeyValuePair<int, int>> listSop_Sog)
         {
             foreach (KeyValuePair<int, int> pair in listSop_Sog)
@@ -704,6 +706,9 @@ namespace QLKS
 
         private void btMakeBill_Click(object sender, EventArgs e)
         {
+            Button button = (Button)sender;
+            button.BackColor = Color.ForestGreen;
+
             KhachHang kh = new KhachHang();
             kh.HoTen = guna2TextBoxName.Text;
             kh.CCCD = guna2TextBoxCCCD.Text;
@@ -798,9 +803,48 @@ namespace QLKS
             }
         }
 
-        private void tbFormName_TextChanged(object sender, EventArgs e)
+        private void gvAddedServices_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == SL.Index) // Kiểm tra chỉ khi kết thúc chỉnh sửa cột số lượng
+            {
+                DataGridViewCell cell = gvAddedServices.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if (cell.Value != null)
+                {
+                    int quantity;
+                    if (int.TryParse(cell.Value.ToString(), out quantity))
+                    {
+                        // Thực hiện các thay đổi trong giá trị prices dựa trên giá trị số lượng mới
+                        int rowIndex = e.RowIndex; // Vị trí dòng được chỉnh sửa
+                        DataGridViewRow editedRow = gvAddedServices.Rows[rowIndex];
+                        int count = int.Parse(editedRow.Cells["SL"].Value.ToString());
+                        int sophong = int.Parse(editedRow.Cells["sophong3"].Value.ToString());
+                        int id = int.Parse(editedRow.Cells["iddv2"].Value.ToString());
+                        int oldcount = 0;
+                        // Cập nhật giá trị prices tương ứng
+                        SelectedServices selectedServices = lstSelectedSV.Find(x => x.IdService == id && x.SoPhong == sophong);
+                        TotalPrices totalPrices = lstTotalPrices.Find(x => x.SoPhong == sophong);
+                        if (selectedServices != null)
+                        {
+                            // Cập nhật giá trị của object
+                            oldcount = selectedServices.Count;
+                            selectedServices.Count = count;
+                            selectedServices.TotalPrices = selectedServices.Prices * (decimal)count;
+                        }
+                        // Hiển thị giá trị prices lên TextBox hoặc nơi khác
+                        totalPrices.Price += (selectedServices.Prices * (count - oldcount));
+                        tbPrices.Text = totalPrices.Price.ToString("N2");
+                    }
+                    else
+                    {
+                        // Nếu giá trị không hợp lệ (không phải số nguyên), xử lý tại đây
+                        // Ví dụ: Hiển thị thông báo lỗi cho người dùng
+                        MessageBox.Show("Vui lòng nhập số nguyên vào ô số lượng.");
+                        // Hoặc có thể thiết lập giá trị mặc định hoặc xử lý khác tùy theo yêu cầu
+                    }
+                }
+            }
         }
+
+        
     }
 }

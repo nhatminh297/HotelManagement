@@ -42,6 +42,7 @@
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDashboard));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.chartRoomtype = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -743,6 +744,9 @@
             this.dgvLowServices.Location = new System.Drawing.Point(1, 27);
             this.dgvLowServices.Name = "dgvLowServices";
             this.dgvLowServices.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvLowServices.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvLowServices.RowTemplate.Height = 30;
             this.dgvLowServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLowServices.Size = new System.Drawing.Size(266, 156);
             this.dgvLowServices.TabIndex = 3;

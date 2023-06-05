@@ -85,7 +85,7 @@ namespace QLKS
         {
             
             // Kiểm tra xem đã chọn dòng dữ liệu hay chưa
-            if (selectedRow != null) 
+            if (guna2DataGridView2.SelectedRows.Count != 0) 
             {
                 // Hiển thị form mới
                 Bill hoadon = ConvertRowtoBill(guna2DataGridView2.CurrentRow);
@@ -157,12 +157,52 @@ namespace QLKS
             formmainmenu.OpenChildForm(new FormEditBooking(bill));
         }
 
+        private void btMakeBill_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.ForestGreen;
+            button.ForeColor = Color.White;
+        }
 
+        private void btMakeBill_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(40, 40, 80);
+            button.ForeColor = Color.ForestGreen;
+        }
+
+        private void btEdit_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.DarkGoldenrod;
+            button.ForeColor = Color.White;
+        }
+
+        private void btEdit_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(40, 40, 80);
+            button.ForeColor = Color.DarkGoldenrod;
+        }
+
+        private void guna2ButtonDelete_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.Firebrick;
+            button.ForeColor = Color.White;
+        }
+
+        private void guna2ButtonDelete_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Guna2Button)sender;
+            button.FillColor = Color.FromArgb(40, 40, 80);
+            button.ForeColor = Color.Firebrick;
+        }
 
         private void guna2ButtonDelete_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem đã chọn dòng dữ liệu hay chưa
-            if (selectedRow != null)
+            if (guna2DataGridView2.SelectedRows.Count > 0)
             {
                 DialogResult result = MessageBox.Show("Are you sure?", "Confirm!", MessageBoxButtons.OKCancel);
                 if (result == DialogResult.OK)
@@ -202,6 +242,50 @@ namespace QLKS
             {
                 // Hiển thị thông báo cho người dùng rằng phải chọn dòng dữ liệu trước khi bấm nút
                 MessageBox.Show("Please choose data!");
+            }
+        }
+
+        private void tbSearchName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true; 
+                e.SuppressKeyPress = true;
+
+                string searchText = tbSearchName.Text.ToLower(); // Lấy giá trị trong TextBox và chuyển thành chữ thường
+                int number;
+                bool check = int.TryParse(searchText, out number);
+                if (!check)
+                    foreach (DataGridViewRow row in guna2DataGridView2.Rows)
+                    {
+                        // Kiểm tra giá trị trong cột tương ứng với dòng hiện tại
+                        if (row.Cells["tenkh"].Value != null && row.Cells["tenkh"].Value.ToString().ToLower().Contains(searchText))
+                        {
+                            row.Visible = true; // Hiển thị dòng nếu giá trị phù hợp
+                        }
+                        else
+                        {
+                            row.Visible = false; // Ẩn dòng nếu giá trị không phù hợp
+                        }
+                    }
+                else
+                {
+                    foreach (DataGridViewRow row in guna2DataGridView2.Rows)
+                    {
+                        // Kiểm tra giá trị trong cột tương ứng với dòng hiện tại
+                        if (row.Cells["sophong"].Value != null && row.Cells["sophong"].Value.ToString().ToLower().Contains(searchText))
+                        {
+                            row.Visible = true; // Hiển thị dòng nếu giá trị phù hợp
+                        }
+                        else
+                        {
+                            row.Visible = false; // Ẩn dòng nếu giá trị không phù hợp
+                        }
+                    }
+                }
+
+                // Thoát khỏi TextBox sau khi thực hiện tìm kiếm
+                guna2DataGridView2.Focus();
             }
         }
     }

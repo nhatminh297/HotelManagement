@@ -37,7 +37,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2tbTime = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2DateEnd = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateStart = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -55,6 +54,8 @@
             this.loaidv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giadv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iddv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             this.line = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.guna2ButtonDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btEdit = new Guna.UI2.WinForms.Guna2Button();
             this.tbFormName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -139,32 +139,6 @@
             this.guna2tbTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2tbTime.TextChanged += new System.EventHandler(this.guna2tbTime_TextChanged);
             // 
-            // guna2TextBox5
-            // 
-            this.guna2TextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2TextBox5.BorderThickness = 0;
-            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox5.DefaultText = "Added Services";
-            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
-            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.Font = new System.Drawing.Font("Baskerville Old Face", 14F, System.Drawing.FontStyle.Bold);
-            this.guna2TextBox5.ForeColor = System.Drawing.Color.Turquoise;
-            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.Location = new System.Drawing.Point(362, 70);
-            this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.guna2TextBox5.Name = "guna2TextBox5";
-            this.guna2TextBox5.PasswordChar = '\0';
-            this.guna2TextBox5.PlaceholderText = "";
-            this.guna2TextBox5.ReadOnly = true;
-            this.guna2TextBox5.SelectedText = "";
-            this.guna2TextBox5.Size = new System.Drawing.Size(223, 25);
-            this.guna2TextBox5.TabIndex = 13;
-            this.guna2TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -185,6 +159,7 @@
             this.guna2DateEnd.BorderRadius = 5;
             this.guna2DateEnd.Checked = true;
             this.guna2DateEnd.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.guna2DateEnd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.guna2DateEnd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2DateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.guna2DateEnd.Location = new System.Drawing.Point(386, 18);
@@ -197,6 +172,8 @@
             this.guna2DateEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2DateEnd.Value = new System.DateTime(2023, 5, 19, 19, 37, 27, 693);
             this.guna2DateEnd.ValueChanged += new System.EventHandler(this.Guna2DateEnd_ValueChanged);
+            this.guna2DateEnd.MouseEnter += new System.EventHandler(this.guna2DateStart_MouseEnter);
+            this.guna2DateEnd.MouseLeave += new System.EventHandler(this.guna2DateStart_MouseLeave);
             // 
             // guna2DateStart
             // 
@@ -204,6 +181,7 @@
             this.guna2DateStart.BorderRadius = 5;
             this.guna2DateStart.Checked = true;
             this.guna2DateStart.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.guna2DateStart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.guna2DateStart.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2DateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.guna2DateStart.Location = new System.Drawing.Point(218, 18);
@@ -216,6 +194,8 @@
             this.guna2DateStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2DateStart.Value = new System.DateTime(2023, 5, 19, 20, 56, 18, 615);
             this.guna2DateStart.ValueChanged += new System.EventHandler(this.guna2DateStart_ValueChanged);
+            this.guna2DateStart.MouseEnter += new System.EventHandler(this.guna2DateStart_MouseEnter);
+            this.guna2DateStart.MouseLeave += new System.EventHandler(this.guna2DateStart_MouseLeave);
             // 
             // guna2Panel1
             // 
@@ -247,6 +227,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gvAddedServices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvAddedServices.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gvAddedServices.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvAddedServices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -283,7 +264,7 @@
             this.gvAddedServices.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.gvAddedServices.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.gvAddedServices.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gvAddedServices.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gvAddedServices.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvAddedServices.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvAddedServices.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gvAddedServices.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -300,7 +281,7 @@
             this.gvAddedServices.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvAddedServices.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.gvAddedServices.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvAddedServices_CellDoubleClick);
-            this.gvAddedServices.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvAddedServices_CellEndEdit);
+            this.gvAddedServices.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvAddedServices_CellLeave);
             this.gvAddedServices.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.gvAddedServices_CellValidating);
             this.gvAddedServices.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gvAddedServices_EditingControlShowing);
             this.gvAddedServices.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gvAddedServices_KeyPress);
@@ -357,6 +338,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.gvServices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gvServices.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gvServices.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvServices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -394,7 +376,7 @@
             this.gvServices.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.gvServices.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.gvServices.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gvServices.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gvServices.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
             this.gvServices.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvServices.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gvServices.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -438,6 +420,58 @@
             this.iddv.Name = "iddv";
             this.iddv.ReadOnly = true;
             this.iddv.Visible = false;
+            // 
+            // guna2TextBox5
+            // 
+            this.guna2TextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2TextBox5.BorderThickness = 0;
+            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox5.DefaultText = "Added Services";
+            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.Font = new System.Drawing.Font("Baskerville Old Face", 14F, System.Drawing.FontStyle.Bold);
+            this.guna2TextBox5.ForeColor = System.Drawing.Color.Turquoise;
+            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.Location = new System.Drawing.Point(362, 70);
+            this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.guna2TextBox5.Name = "guna2TextBox5";
+            this.guna2TextBox5.PasswordChar = '\0';
+            this.guna2TextBox5.PlaceholderText = "";
+            this.guna2TextBox5.ReadOnly = true;
+            this.guna2TextBox5.SelectedText = "";
+            this.guna2TextBox5.Size = new System.Drawing.Size(223, 25);
+            this.guna2TextBox5.TabIndex = 13;
+            this.guna2TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2TextBox4
+            // 
+            this.guna2TextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2TextBox4.BorderThickness = 0;
+            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox4.DefaultText = "Available Services";
+            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
+            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Font = new System.Drawing.Font("Baskerville Old Face", 14F, System.Drawing.FontStyle.Bold);
+            this.guna2TextBox4.ForeColor = System.Drawing.Color.Turquoise;
+            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.Location = new System.Drawing.Point(36, 71);
+            this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.guna2TextBox4.Name = "guna2TextBox4";
+            this.guna2TextBox4.PasswordChar = '\0';
+            this.guna2TextBox4.PlaceholderText = "";
+            this.guna2TextBox4.ReadOnly = true;
+            this.guna2TextBox4.SelectedText = "";
+            this.guna2TextBox4.Size = new System.Drawing.Size(223, 24);
+            this.guna2TextBox4.TabIndex = 11;
+            this.guna2TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // line
             // 
@@ -698,56 +732,68 @@
             // btMakeBill
             // 
             this.btMakeBill.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btMakeBill.BorderColor = System.Drawing.Color.ForestGreen;
             this.btMakeBill.BorderRadius = 5;
+            this.btMakeBill.BorderThickness = 2;
             this.btMakeBill.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btMakeBill.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btMakeBill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btMakeBill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btMakeBill.FillColor = System.Drawing.Color.ForestGreen;
+            this.btMakeBill.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.btMakeBill.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMakeBill.ForeColor = System.Drawing.Color.White;
+            this.btMakeBill.ForeColor = System.Drawing.Color.ForestGreen;
             this.btMakeBill.Location = new System.Drawing.Point(559, 18);
             this.btMakeBill.Name = "btMakeBill";
             this.btMakeBill.Size = new System.Drawing.Size(96, 38);
             this.btMakeBill.TabIndex = 8;
             this.btMakeBill.Text = "MAKE BILL";
             this.btMakeBill.Click += new System.EventHandler(this.btMakeBill_Click);
+            this.btMakeBill.MouseEnter += new System.EventHandler(this.btMakeBill_MouseEnter);
+            this.btMakeBill.MouseLeave += new System.EventHandler(this.btMakeBill_MouseLeave);
             // 
             // guna2ButtonDelete
             // 
             this.guna2ButtonDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2ButtonDelete.BorderColor = System.Drawing.Color.Firebrick;
             this.guna2ButtonDelete.BorderRadius = 5;
+            this.guna2ButtonDelete.BorderThickness = 2;
             this.guna2ButtonDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButtonDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButtonDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2ButtonDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2ButtonDelete.FillColor = System.Drawing.Color.Firebrick;
+            this.guna2ButtonDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.guna2ButtonDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ButtonDelete.ForeColor = System.Drawing.Color.White;
+            this.guna2ButtonDelete.ForeColor = System.Drawing.Color.Firebrick;
             this.guna2ButtonDelete.Location = new System.Drawing.Point(800, 18);
             this.guna2ButtonDelete.Name = "guna2ButtonDelete";
             this.guna2ButtonDelete.Size = new System.Drawing.Size(96, 38);
             this.guna2ButtonDelete.TabIndex = 10;
             this.guna2ButtonDelete.Text = "Cancle";
             this.guna2ButtonDelete.Click += new System.EventHandler(this.guna2ButtonDelete_Click);
+            this.guna2ButtonDelete.MouseEnter += new System.EventHandler(this.guna2ButtonDelete_MouseEnter);
+            this.guna2ButtonDelete.MouseLeave += new System.EventHandler(this.guna2ButtonDelete_MouseLeave);
             // 
             // btEdit
             // 
             this.btEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btEdit.BorderColor = System.Drawing.Color.DarkGoldenrod;
             this.btEdit.BorderRadius = 5;
+            this.btEdit.BorderThickness = 2;
             this.btEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btEdit.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.btEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(90)))));
             this.btEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEdit.ForeColor = System.Drawing.Color.White;
+            this.btEdit.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btEdit.Location = new System.Drawing.Point(683, 18);
             this.btEdit.Name = "btEdit";
             this.btEdit.Size = new System.Drawing.Size(96, 38);
             this.btEdit.TabIndex = 9;
             this.btEdit.Text = "Confirm";
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
+            this.btEdit.MouseEnter += new System.EventHandler(this.btEdit_MouseEnter);
+            this.btEdit.MouseLeave += new System.EventHandler(this.btEdit_MouseLeave);
             // 
             // tbFormName
             // 
@@ -774,32 +820,6 @@
             this.tbFormName.Size = new System.Drawing.Size(950, 67);
             this.tbFormName.TabIndex = 1;
             this.tbFormName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // guna2TextBox4
-            // 
-            this.guna2TextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2TextBox4.BorderThickness = 0;
-            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox4.DefaultText = "Available Services";
-            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(80)))));
-            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Font = new System.Drawing.Font("Baskerville Old Face", 14F, System.Drawing.FontStyle.Bold);
-            this.guna2TextBox4.ForeColor = System.Drawing.Color.Turquoise;
-            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox4.Location = new System.Drawing.Point(36, 71);
-            this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.guna2TextBox4.Name = "guna2TextBox4";
-            this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderText = "";
-            this.guna2TextBox4.ReadOnly = true;
-            this.guna2TextBox4.SelectedText = "";
-            this.guna2TextBox4.Size = new System.Drawing.Size(223, 24);
-            this.guna2TextBox4.TabIndex = 11;
-            this.guna2TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormEditBooking
             // 

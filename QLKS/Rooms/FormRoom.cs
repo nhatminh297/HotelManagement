@@ -154,27 +154,6 @@ namespace QLKS
             }
         }
 
-        private void tbSearchRoom_Enter(object sender, EventArgs e)
-        {
-            Guna2TextBox tb = (Guna2TextBox)sender;
-            if (tb.Text == "Room number")
-            {
-                tb.Text = "";
-                tb.ForeColor = Color.Black;
-            }
-        }
-
-        private void tbSearchRoom_Leave(object sender, EventArgs e)
-        {
-            Guna2TextBox textBox = (Guna2TextBox)sender;
-
-            if (string.IsNullOrWhiteSpace(textBox.Text))
-            {
-                textBox.Text = "Room number";
-                textBox.ForeColor = Color.Gray;
-            }
-        }
-
         private void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = guna2DataGridView1.CurrentRow;
@@ -228,7 +207,7 @@ namespace QLKS
                 foreach (DataGridViewRow row in guna2DataGridView1.Rows)
                 {
                     // Kiểm tra giá trị trong cột tương ứng với dòng hiện tại
-                    if (row.Cells["colName"].Value != null && row.Cells["colName"].Value.ToString().ToLower().Contains(searchText))
+                    if (row.Cells["colType"].Value != null && row.Cells["colType"].Value.ToString().ToLower().Contains(searchText))
                     {
                         row.Visible = true; // Hiển thị dòng nếu giá trị phù hợp
                     }

@@ -299,9 +299,7 @@
             this.tbSearchRoom.SelectedText = "";
             this.tbSearchRoom.Size = new System.Drawing.Size(312, 36);
             this.tbSearchRoom.TabIndex = 6;
-            this.tbSearchRoom.Enter += new System.EventHandler(this.tbSearchRoom_Enter);
             this.tbSearchRoom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearchRoom_KeyDown);
-            this.tbSearchRoom.Leave += new System.EventHandler(this.tbSearchRoom_Leave);
             // 
             // FormRoom
             // 

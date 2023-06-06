@@ -100,5 +100,11 @@ namespace QLKS.DAO
             return bill;
         }
 
+        public void ChangeManvOfBills(int manv)
+        {
+            string query = "update hoadon set MANV = '9' where MANV = '"+manv+"'";
+            DataProvider.Instance.ExecuteQuery(query);
+        }
+
     }
 }

@@ -61,7 +61,7 @@ namespace QLKS.DAO
         public List<Accounts> GetAllAccount()
         {
             List<Accounts> list = new List<Accounts>();
-            string query = "select * from NhanVien";
+            string query = "select * from NhanVien where id <> 9";
             DataTable resTable = DataProvider.Instance.ExecuteQuery(query);
             if(resTable.Rows.Count > 0)
             {
@@ -74,11 +74,27 @@ namespace QLKS.DAO
             return list;
         }
 
+        public bool IsForeignKeyOfNotCheckedBills(int manv)
+        {
+            string query = "select * from hoadon where trangthai = N'Chưa thanh toán' and manv = '"+manv+"'";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public int DeleteAccounts(int ID)
         {
-            string query = "DELETE FROM Nhanvien WHERE ID = "+ID;
-            int rowaffect = DataProvider.Instance.ExecuteNonQuery(query);
-            return rowaffect;
+            if (!IsForeignKeyOfNotCheckedBills(ID))
+            {
+                BillDAO.Instance.ChangeManvOfBills(ID);
+                string query = "DELETE FROM Nhanvien WHERE ID = " + ID;
+                int rowaffect = DataProvider.Instance.ExecuteNonQuery(query);
+                return rowaffect;
+            }
+            return 0;
         }
 
         public int AddAccounts(Accounts acc)
@@ -117,13 +133,13 @@ namespace QLKS.DAO
 
         public bool IsExistsUsername(string username)
         {
-            string query = "select * from nhanvien where username = '" + username+"'";
-            int rowaffect = DataProvider.Instance.ExecuteNonQuery(query);
-            if (rowaffect == 0)
+            string query = "select count(*) from nhanvien where username = '" + username +"'";
+            int table = (int)DataProvider.Instance.ExecuteScalar(query);
+            if (table > 0)
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
 
     }

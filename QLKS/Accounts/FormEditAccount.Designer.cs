@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditAccount));
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cbRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.lbManv = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.tbpassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbusername = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,18 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(311, 312);
             this.guna2Panel2.TabIndex = 0;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Red;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(43, 169);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(106, 15);
+            this.guna2HtmlLabel1.TabIndex = 101;
+            this.guna2HtmlLabel1.Text = "mật khẩu chưa hợp lệ";
+            this.guna2HtmlLabel1.Visible = false;
             // 
             // cbRole
             // 
@@ -176,20 +188,9 @@
             this.tbusername.SelectedText = "";
             this.tbusername.Size = new System.Drawing.Size(238, 36);
             this.tbusername.TabIndex = 1;
+            this.tbusername.TextChanged += new System.EventHandler(this.tbusername_TextChanged);
             this.tbusername.Enter += new System.EventHandler(this.tbusername_Enter);
             this.tbusername.Leave += new System.EventHandler(this.tbusername_Leave);
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(43, 169);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(106, 15);
-            this.guna2HtmlLabel1.TabIndex = 101;
-            this.guna2HtmlLabel1.Text = "mật khẩu chưa hợp lệ";
-            this.guna2HtmlLabel1.Visible = false;
             // 
             // FormEditAccount
             // 

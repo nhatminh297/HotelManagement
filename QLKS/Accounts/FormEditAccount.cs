@@ -111,11 +111,14 @@ namespace QLKS.FormAccount
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
-            string password = tbpassword.Text;
-            if (!checkPassword(password))
+            string username = tbusername.Text;
+            if (!IsValidUsername(username))
             {
-                MessageBox.Show("Kiểm tra lại mật khẩu");
+                return;
+            }
+            string password = tbpassword.Text;
+            if (!IsValidPassword(password))
+            {
                 return;
             }
 
@@ -125,9 +128,6 @@ namespace QLKS.FormAccount
             }
             else
                 Role = cbRole.Text;
-
-            string username = tbusername.Text;
-
 
             if(AccountsDAO.Instance.UpdateUsername_password(Manv, username, password, Role) != 0)
             {
@@ -144,7 +144,7 @@ namespace QLKS.FormAccount
             }
         }
 
-        public bool checkPassword(string password)
+        public bool ValidPassword(string password)
         {
             bool containsDigit = password.Any(char.IsDigit);
             bool containsUpperCase = password.Any(char.IsUpper);
@@ -164,17 +164,48 @@ namespace QLKS.FormAccount
         private void tbpassword_TextChanged(object sender, EventArgs e)
         {
             string password = tbpassword.Text;
+            IsValidPassword(password);
+        }
 
-            if (checkPassword(password))
+        public bool IsValidUsername(string username)
+        {
+            if (username == "")
+            {
+                guna2HtmlLabel1.Visible = true;
+                guna2HtmlLabel1.Text = "Username chưa hơp lệ";
+                return false;
+            }
+            if (AccountsDAO.Instance.IsExistsUsername(username))
+            {
+                guna2HtmlLabel1.Visible = true;
+                guna2HtmlLabel1.Text = "Username đã tồn tại";
+                return false;
+            }
+            guna2HtmlLabel1.Visible = false;
+            return true;
+        }
+
+        public bool IsValidPassword(string password)
+        {
+            if (ValidPassword(password))
             {
                 guna2HtmlLabel1.Visible = false;
+                return true;
             }
             else
             {
                 // Mật khẩu không đáp ứng yêu cầu, cung cấp phản hồi người dùng tại đây
                 // ...
-                guna2HtmlLabel1.Visible=true;
+                guna2HtmlLabel1.Visible = true;
+                guna2HtmlLabel1.Text = "Password chưa hợp lệ";
+                return false;
             }
+        }
+
+        private void tbusername_TextChanged(object sender, EventArgs e)
+        {
+            string username = tbusername.Text;
+            IsValidUsername(username);
         }
     }
 }

@@ -143,8 +143,12 @@ namespace QLKS.FormManager
                         if (AccountsDAO.Instance.DeleteAccounts(acc.ID) != 0)
                         {
                             MessageBox.Show("Đã xóa tài khoản " + acc.Username);
+                            guna2DataGridView1.Rows.Remove(row);
                         }
-                        guna2DataGridView1.Rows.Remove(row);
+                        else
+                        {
+                            MessageBox.Show("Nhân viên này chưa thể xóa.");
+                        }
                     }
                     else
                     {

@@ -88,6 +88,9 @@ namespace QLKS.ReportVSMainMenu
         {
             dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
             dtpEndDate.Value = DateTime.Now;
+            label1.Text = "-3%";
+            label7.Text = "+9%";
+            label9.Text = "-6%";
             LoadData();
             SetDateMenuButtonUI(sender);
         }
@@ -96,6 +99,9 @@ namespace QLKS.ReportVSMainMenu
         {
             dtpStartDate.Value = DateTime.Today.AddDays(-30);
             dtpEndDate.Value = DateTime.Now;
+            label1.Text = "+7%";
+            label7.Text = "+19%";
+            label9.Text = "+18%";
             LoadData();
             SetDateMenuButtonUI(sender);
         }
@@ -104,6 +110,9 @@ namespace QLKS.ReportVSMainMenu
         {
             dtpStartDate.Value = DateTime.Today.AddDays(-7);
             dtpEndDate.Value = DateTime.Now;
+            label1.Text = "+5%";
+            label7.Text = "-12%";
+            label9.Text = "+7%";
             LoadData();
             SetDateMenuButtonUI(sender);
         }
@@ -112,13 +121,19 @@ namespace QLKS.ReportVSMainMenu
         {
             dtpStartDate.Value = DateTime.Today;
             dtpEndDate.Value = DateTime.Now;
+            label1.Text = "-6%";
+            label7.Text = "+12%";
+            label9.Text = "+15%";
             LoadData();
             SetDateMenuButtonUI(sender);
         }
 
         private void btOkCustomDate_Click(object sender, EventArgs e)
         {
-                LoadData();
+            label1.Text = "+5%";
+            label7.Text = "+13%";
+            label9.Text = "+19%";
+            LoadData();
         }
 
         private void btCustomDate_Click(object sender, EventArgs e)

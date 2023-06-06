@@ -116,9 +116,8 @@
             this.tbSearchName.SelectedText = "";
             this.tbSearchName.Size = new System.Drawing.Size(312, 36);
             this.tbSearchName.TabIndex = 4;
-            this.tbSearchName.Enter += new System.EventHandler(this.tbSearchName_Enter);
+            this.tbSearchName.TextChanged += new System.EventHandler(this.tbSearchName_TextChanged);
             this.tbSearchName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSearchName_KeyDown);
-            this.tbSearchName.Leave += new System.EventHandler(this.tbSearchName_Leave);
             // 
             // guna2DataGridView1
             // 

@@ -21,27 +21,6 @@ namespace QLKS
             loadCusTomers();
         }
 
-        private void tbSearchName_Enter(object sender, EventArgs e)
-        {
-            Guna2TextBox tb = (Guna2TextBox)sender;
-            if (tb.Text == "Search Fullname")
-            {
-                tb.Text = "";
-                tb.ForeColor = Color.Black;
-            }
-        }
-
-        private void tbSearchName_Leave(object sender, EventArgs e)
-        {
-            Guna2TextBox tb = (Guna2TextBox)sender;
-
-            if (string.IsNullOrWhiteSpace(tb.Text))
-            {
-                tb.Text = "Search Fullname";
-                tb.ForeColor = Color.Gray;
-            }
-        }
-
         public KhachHang RowToKhachHang(DataGridViewRow row)
         {
             KhachHang kh = new KhachHang();
@@ -84,7 +63,7 @@ namespace QLKS
             string searchText = tbSearchName.Text.ToLower(); // Lấy giá trị trong TextBox và chuyển thành chữ thường
             int number;
             bool check = int.TryParse(searchText, out number);
-            if (!check)
+            if (!check)// người ta search name
                 foreach (DataGridViewRow row in guna2DataGridView1.Rows)
                 {
                     // Kiểm tra giá trị trong cột tương ứng với dòng hiện tại
@@ -97,7 +76,7 @@ namespace QLKS
                         row.Visible = false; // Ẩn dòng nếu giá trị không phù hợp
                     }
                 }
-            else
+            else // người ta search bằng cccd
             {
                 foreach (DataGridViewRow row in guna2DataGridView1.Rows)
                 {
@@ -129,6 +108,7 @@ namespace QLKS
 
         private void btSearch_Click(object sender, EventArgs e)
         {
+
             Search();
         }
 
@@ -149,6 +129,11 @@ namespace QLKS
         private void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
              
+        }
+
+        private void tbSearchName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

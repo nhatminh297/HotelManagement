@@ -74,9 +74,9 @@
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Turquoise;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(35, 35);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(235, 33);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(224, 33);
             this.guna2HtmlLabel1.TabIndex = 14;
-            this.guna2HtmlLabel1.Text = "Room Informations";
+            this.guna2HtmlLabel1.Text = "Room Information";
             // 
             // guna2ButtonDelete
             // 

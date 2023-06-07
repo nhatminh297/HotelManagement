@@ -458,7 +458,7 @@
             this.gvAddedServices.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gvAddedServices.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.gvAddedServices.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvAddedServices_CellDoubleClick);
-            this.gvAddedServices.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvAddedServices_CellLeave);
+            this.gvAddedServices.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvAddedServices_CellLeave);
             this.gvAddedServices.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.gvAddedServices_EditingControlShowing);
             this.gvAddedServices.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gvAddedServices_KeyPress);
             // 

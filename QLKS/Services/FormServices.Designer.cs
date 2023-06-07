@@ -212,9 +212,9 @@
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Turquoise;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(35, 35);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(247, 33);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(236, 33);
             this.guna2HtmlLabel1.TabIndex = 15;
-            this.guna2HtmlLabel1.Text = "Service Informations";
+            this.guna2HtmlLabel1.Text = "Service Information";
             // 
             // guna2DataGridView1
             // 

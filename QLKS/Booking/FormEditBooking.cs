@@ -150,7 +150,7 @@ namespace QLKS
         {
             showKH(hoadon.Makh);
             showAddedServices(hoadon.ID);
-            tbFormName.Text = "Oders of Room " + hoadon.Sophong.ToString();
+            tbFormName.Text = "Orders of Room " + hoadon.Sophong.ToString();
             tbPrices.Text = hoadon.Prices.ToString("N2");
             guna2DateStart.Value = hoadon.Checkin;
             guna2DateEnd.Value = hoadon.Checkout;
@@ -388,7 +388,7 @@ namespace QLKS
                 gvAddedServices.CurrentCell = cell;
                 gvAddedServices.BeginEdit(false);
                 //gvAddedServices.EndEdit(false);
-                e.Cancel = true;
+                //e.Cancel = true;
             }
             else
             {
@@ -466,25 +466,6 @@ namespace QLKS
             }
         }
 
-        private void gvAddedServices_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            if (!isCellEmpty)
-            {
-                DataGridViewRow row = gvAddedServices.Rows[e.RowIndex];
-                //if (row.Cells["SL"].Value)
-                SvBill svBill = AddedSvToSvBill(row);
-                SvBill Item = lstsvBills.FirstOrDefault(item => item.Tendv == svBill.Tendv);
-                int old = Item.Soluong;
-                Item.Soluong = svBill.Soluong;
-                Item.Prices = Item.Dongia * Item.Soluong;
-                gvAddedServices.Rows[e.RowIndex].Cells["total"].Value = Item.Prices;
-                decimal delta = Item.Dongia * (Item.Soluong - old);
-                totalSvBill += delta;
-                hoadon.Prices += delta;
-                tbPrices.Text = hoadon.Prices.ToString("N2");
-            }
-        }
-
         private void btMakeBill_MouseEnter(object sender, EventArgs e)
         {
             var button = (Guna2Button)sender;
@@ -539,6 +520,35 @@ namespace QLKS
             var dtp = (Guna2DateTimePicker)sender;
             dtp.FillColor = Color.FromArgb(60, 60, 100);
             dtp.ForeColor = Color.Black;
+        }
+
+        private void gvAddedServices_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!isCellEmpty)
+            {
+                DataGridViewRow row = gvAddedServices.Rows[e.RowIndex];
+                if (row.Cells["SL"].Value == null)
+                {
+                    gvAddedServices.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 1;
+                }
+                if (row.Cells["SL"].Value != null)
+                {
+                    SvBill svBill = AddedSvToSvBill(row);
+                    SvBill Item = lstsvBills.FirstOrDefault(item => item.Tendv == svBill.Tendv);
+                    if (Item != null)
+                    {
+                        int old = Item.Soluong;
+                        Item.Soluong = svBill.Soluong;
+                        Item.Prices = Item.Dongia * Item.Soluong;
+                        gvAddedServices.Rows[e.RowIndex].Cells["total"].Value = Item.Prices;
+                        decimal delta = Item.Dongia * (Item.Soluong - old);
+                        totalSvBill += delta;
+                        hoadon.Prices += delta;
+                        tbPrices.Text = hoadon.Prices.ToString("N2");
+                    }
+                }
+
+            }
         }
     }
 }

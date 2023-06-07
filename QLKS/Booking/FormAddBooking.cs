@@ -583,12 +583,6 @@ namespace QLKS
             gvAddedServices.Rows.RemoveAt(e.RowIndex);
         }
 
-        private void gvAddedServices_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
-
         private void gvAddedServices_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -823,6 +817,10 @@ namespace QLKS
             if (e.ColumnIndex == SL.Index) // Kiểm tra chỉ khi kết thúc chỉnh sửa cột số lượng
             {
                 DataGridViewCell cell = gvAddedServices.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if(cell.Value == null)
+                {
+                    gvAddedServices.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 1;
+                }
                 if (cell.Value != null)
                 {
                     int quantity;
@@ -837,17 +835,20 @@ namespace QLKS
                         int oldcount = 0;
                         // Cập nhật giá trị prices tương ứng
                         SelectedServices selectedServices = lstSelectedSV.Find(x => x.IdService == id && x.SoPhong == sophong);
-                        TotalPrices totalPrices = lstTotalPrices.Find(x => x.SoPhong == sophong);
                         if (selectedServices != null)
                         {
-                            // Cập nhật giá trị của object
-                            oldcount = selectedServices.Count;
-                            selectedServices.Count = count;
-                            selectedServices.TotalPrices = selectedServices.Prices * (decimal)count;
+                            TotalPrices totalPrices = lstTotalPrices.Find(x => x.SoPhong == sophong);
+                            if (selectedServices != null)
+                            {
+                                // Cập nhật giá trị của object
+                                oldcount = selectedServices.Count;
+                                selectedServices.Count = count;
+                                selectedServices.TotalPrices = selectedServices.Prices * (decimal)count;
+                            }
+                            // Hiển thị giá trị prices lên TextBox hoặc nơi khác
+                            totalPrices.Price += (selectedServices.Prices * (count - oldcount));
+                            tbPrices.Text = totalPrices.Price.ToString("N2");
                         }
-                        // Hiển thị giá trị prices lên TextBox hoặc nơi khác
-                        totalPrices.Price += (selectedServices.Prices * (count - oldcount));
-                        tbPrices.Text = totalPrices.Price.ToString("N2");
                     }
                     else
                     {

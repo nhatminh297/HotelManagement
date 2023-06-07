@@ -183,7 +183,7 @@
             series1.LabelForeColor = System.Drawing.Color.White;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             series1.YValuesPerPoint = 4;
             this.chartRoomtype.Series.Add(series1);
             this.chartRoomtype.Size = new System.Drawing.Size(239, 187);
